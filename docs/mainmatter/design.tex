@@ -1,0 +1,40 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{Design}
+Breast cancer is a leading cause of death amongst women worldwide, and early detection is paramount to improve the chances of survival. Computer-aided detection (CAD) systems have long been used to assist in screening, and diagnosis workflows for long, but recent developments in convolutional neural networks (CNNs) have significantly boosted the rates of detection on natural image benchmarks. The aim of this project is to leverage state-of-the-art CNN architectures to build a decision support system for breast cancer detection in mammograms. The Digital Database for Screening Mammography (DDSM) will be used to train, and evaluate a CNN model, and the results will be used to indicate the presence of malignant tumours. Thus, the primary objective is to develop, and evaluate a CNN, that matches or exceeds the single-reader accuracy commonly achieved by radiologists in large-scale screening programmes. A working inference API will be developed, where the user may upload an image, run model inference, and receive a prediction.
+
+\section{Domain Context, and User Analysis}
+Mammography screening programs capture images of the breast, and use them to detect early signs of breast cancer. Radiologists are responsible for viewing multiple images per week. In this context, false negatives lead to delayed diagnoses that may pose serious health consequences, whilst false positives impose unnecessary stress on patients, and the system itself, with procedures like biopsies, and follow-up imaging creating an operational burden. Therefore, any AI-powered decision support system must prioritise very high sensitivity while maintaining a reasonable specificity to avoid recalls.
+
+The primary users of this system will be professional radiologists, who will utilise suggestions from it, and clinicians who monitor screening quality, and throughput values. Radiologists will require not only malignancy scores, but also explainable outputs demonstrating where the model has detected abnormalities for validation purposes, and to manage trust issues in the system. Many published works lack sufficient end-to-end system design, and evaluation. By concentrating on both model performance, and system usability, this project fills a gap in showing a deployable prototype complete with explainable outputs, and inference benchmarks.
+
+\section{System Architecture, and Design}
+The resultant system will be comprised of a web application containing the following components: data preprocessing, model training, and evaluation, explainability, inference API, and user interface.
+
+\begin{itemize}
+	\item \textbf{Data Preprocessing} \textemdash\ The DDSM dataset will be appropriately preprocessed to ensure that the images are in a suitable format for the model. This will include resizing, normalisation, and augmentation of the images to improve the model's performance. Thus, horizontal flipping, rotations, and contrast adjustments may be applied on the fly to increase the diversity of the training data, and reduce overfitting. The dataset will also be split into training, validation, and test sets to ensure equal class balance across malignant, and benign classes.
+	\item \textbf{Model Training, and Evaluation} \textemdash\ A CNN model will be trained on the DDSM dataset, being constructed with TensorFlow, and Keras. The model will then be evaluated using metrics like accuracy, precision, recall, and F1-score.
+	\item \textbf{Explainability} \textemdash\ Grad-CAM will be used to overlay heatmaps on input mammograms, demonstrating various regions that drive the model's prediction.
+	\item \textbf{Inference, and User Interface} \textemdash\ A Django-powered web server will be used for REST APIs, and hosting the user interface for users to interact with the system.
+\end{itemize}
+
+\section{Technologies, and Methods}
+In light of the previous components, mature, and well-supported libraries were selected to ensure that the system is easy to maintain, and extend.
+
+\begin{itemize}
+	\item \textbf{Data Handling} \textemdash\ Python as the fundamental language of choice for the entire stack, NumPy, and Pandas for data manipulation tasks, and OpenCV for image processing tasks.
+	\item \textbf{Deep Learning} \textemdash\ TensorFlow for neural networks, with Keras frontend for ease of use, and fast prototyping.
+	\item \textbf{Hyperparameter Tuning} \textemdash\ Optuna for automated, and efficient hyperparameter tuning, and model selection.
+	\item \textbf{Explainability} \textemdash\ Grad-CAM through tf-keras-vis for visualising the model's attention on the input image, and highlighting the areas of interest.
+	\item \textbf{API} \textemdash\ Django for high performance, and OpenAPI-compatible REST APIs.
+	\item \textbf{Deployment} \textemdash\ Docker containers for easy deployment, and integration with cloud services (like AWS Elastic Container Service).
+\end{itemize}
+
+\section{Model}
+The core of the system is a deep feature extractor powered by a convolutional neural network (CNN). Multiple methods will be explored, including alternative architectures like vision transformers (ViTs), but initially, a VGG16 backbone was selected. This provides proven performance on breast image tasks, and manageable complexity \autocite{fatima2025application}. VGG16's uniform 16-layer architecture adapts well via transfer learning from ImageNet, with prior work achieving a high accuracy on the BreakHis histopathology dataset by fine-tuning VGG16 \autocite{fatima2025application}. Additionally, VGG16 has shown excellent generalisation on unbalanced data \autocite{fatima2025application}, making it suitable for the DDSM dataset's class imbalance.
+
+\section{Plan of Evaluation}
+The project as a whole will be evaluated using a variety of metrics. For the model itself, the most critical part of the system, the standard evaluation metrics of accuracy, precision, recall, and F1-score will be used to assess its performance on the DDSM dataset, including the Area Under the Receiver Operating Characteristic Curve (AUC). Together with Grad-CAM heatmaps, which will show the model's attention on the input images, these metrics will provide a comprehensive outlook on the model's classification performance. Since not much emphasis will be placed on the user interface, the evaluation will focus on the model's performance, and the explainability of the outputs. The inference API will be tested for usability, and performance, ensuring that it can handle multiple requests efficiently, and provide accurate predictions in a timely manner.
+
+\end{document}

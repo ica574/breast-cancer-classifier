@@ -1,0 +1,103 @@
+%% Variables
+%%
+%% Customize the variables on variables.tex before continuing
+\input{variables}
+
+\documentclass[12pt, twoside, headsepline, footsepline]{scrreprt}
+
+%% Packages
+\usepackage[\paperType,
+  width=\paperWidth,
+  top=\marginTop,
+  bottom=\marginBottom,
+  bindingoffset=\bindingOffset]{geometry}
+
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{scrlayer-scrpage}
+\usepackage{subfiles}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{adjustbox}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tikz}
+
+\usepackage[autostyle]{csquotes}
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{lipsum} % This should be removed later
+
+\automark[chapter]{chapter}
+\pagestyle{scrheadings}
+\ifoot{\projectAuthor}
+
+%% Commands
+%%
+%% New and modified commands
+
+% \blankpage : adds an empty page after current
+\def\blankpage {
+  \leavevmode
+  \thispagestyle{empty}
+  \newpage
+}
+
+% scrdedication : Environment for a dedication page
+\newenvironment{scrdedication}
+               {
+                 \clearpage            % we want a new page
+                 \thispagestyle{empty} % no header and footer
+                 \vspace*{\stretch{1}} % some space at the top 
+                 \itshape              % the text is in italics
+                 \centering            % text is centered
+               }
+               {
+                 \par                    % end the paragraph
+                 \vspace{\stretch{1}}  % space at bottom is the same as at the top
+                 \clearpage            % finish off the page
+               }
+
+% \fnurl : for url footnotes
+\newcommand\fnurl[2]{\href{#2}{#1}\footnote{\url{#2}}}
+
+
+\title{\projectTitle}
+\author{\projectAuthor}
+\date{\projectDate}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}

@@ -1,0 +1,50 @@
+\documentclass[main]{subfiles}
+
+\begin{document}
+\chapter{Introduction}
+\label{chap:introduction}
+Breast cancer remains as one of the leading causes of cancer mortality amongst women around the globe. Routine screening processes can prompt early detection of cancer, and significantly improve patient outcomes, yet they are time-consuming, and success rates vary depending on the observer. Across the world, many hospitals are taking part in large-scale research programmes to investigate the feasibility of using deep learning systems, like convolutional neural networks (CNNs), to match or exceed the diagnostic acumen of human radiologists in breast cancer screening.
+
+Upon the premise of this initiative, project 3.2 titled \textemdash Deep Learning Breast Cancer Detection, explores the potential of applying CNN-based models to publicly available datasets such as the Digital Database for Screening Mammography (DDSM), as well as other technologies like vision transformers, and transfer learning. The objective of this project is two-fold: to develop a working proof-of-concept that achieves statistical significance in its results on the DDSM dataset, and to evaluate the integration of such a prototype into existing clinical workflows, identifying potential challenges and limitations.
+
+This introduction begins by stating the clinical, and technical motivation for this project, then presents research questions, and objectives, as well as an outline of the report structure.
+
+\section{Motivation}
+\label{sec:intro_motivation}
+Mammography is widely known as the de facto standard for early breast cancer screening. Despite this, the visual similarity between benign, and malignant lesions can challenge even the most experienced of radiologists, leading to skewed results, and misdiagnosis. Often, false positives lead to unnecessary follow-ups, and false negatives result in delayed treatment, which can prove deadly. Deep learning can significantly reduce these issues by learning from large collections of labelled scans, complementing radiologists, and improving the accuracy of mammography.
+
+Convolutional neural networks (CNNs), can be used to automatically extract features from an image, including edges, and complex textures, that can prove demonstrably effective at weeding out subtle patterns in pathology. Various studies have demonstrated the prowess of CNNs in tasks like tumour segmentation, and classification on medical imaging modalities like CT, and MRI scans, however, applications to mammography remain relatively untested, in part due to the challenges like standardisation, and generalisation.
+
+The DDSM dataset is a large-scale collection of digital mammograms, annotated by radiologists for the presence or absence of malignant lesions. It is widely used in research, allowing for the effective benchmarking on model performance against established studies, and comparing CNN outputs to ground-truth labels. In addition, the use of the DDSM ensures that the prototype is developed on a dataset that is representative of real-world clinical data, and is reproducible, allowing for further extensions, and collaborations.
+
+Aside from technical performance, an automated system must be understood in how it could augment clinical workflows. Thus, a CNN that is reliable enough, could be used as an assistant to radiologists, prioritising high-risk cases for human review, and reducing the burden of radiologist workload, and turnaround times. On the other hand, understanding how the system oculd fail, like misclassification issues, could guide refinements in data preprocessing pipelines, model architecture, and evaluation metrics.
+
+\section{Research Questions, and Objectives}
+\label{sec:intro_research_questions}
+This project is comprised of the following, central research questions.
+
+\begin{enumerate}
+	\item \textbf{Model Feasibility} \textemdash\ Can a CNN trained on the DDSM dataset achieve classification metrics (like AUC, sensitivity, specificity) that approach or exceed those for human readers under similar conditions?
+	\item \textbf{Prototype Evaluation} \textemdash\ What do preliminary results demonstrate about the feasibility of integrating a CNN-based system into clinical workflows? How might these insights inform augmentations to model architecture or data augmentation methods to improve the system?
+	\item \textbf{Clinical Integration} \textemdash\ What are some of the practical considerations, like inference time, interpretability, and failures that would affect the adoption of such deep learning systems in a clinical setting?
+\end{enumerate}
+
+In a bid to answer these questions, the following will be performed.
+
+\begin{itemize}
+	\item Develop a CNN architecture using TensorFlow, and Keras, optimised for binary classification of patches, using practices like dataset splitting, transfer learning, and regularisation.
+	\item Train the model on the DDSM dataset, and report performance on a test partition using metrics like accuracy, sensitivity, specificity, and AUC to determine diagnostic accuracy.
+	\item Analyse the model's performance to identify the categories of issues where performance degrades, and identify mitigation strategies.
+	\item Reflect on integration into clinical settings, discussing how such a system helps to reduce radiologist workload in reading mammograms, and error rates.
+\end{itemize}
+
+\section{Report Structure}
+\label{sec:intro_report_structure}
+\begin{itemize}
+	\item \textbf{Chapter 1} \textemdash\ Introduction \textemdash\ This chapter introduces the motivation for the project, and outlines the research questions, and objectives.
+	\item \textbf{Chapter 2} \textemdash\ Literature Review \textemdash\ This chapter reviews the literature on breast cancer screening, and deep learning applications to mammography.
+	\item \textbf{Chapter 3} \textemdash\ Design \textemdash\ This chapter describes the design of the CNN architecture, and the data preprocessing pipeline.
+	\item \textbf{Chapter 4} \textemdash\ Prototype \textemdash\ This chapter describes a basic implementation of the system, including experimental results, error analysis, and the discussion of potential improvements.
+\end{itemize}
+
+\end{document}
