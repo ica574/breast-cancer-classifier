@@ -1,0 +1,91 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{Evaluation}
+\label{ch:evaluation}
+This chapter details a comprehensive evaluation of the breast cancer classification models, implemented using transfer learning-based architectures, and including Grad-CAM visualisations for explainability. The objective of this is to critically determine the performance of the models across several metrics such as quantitative accuracy on the test data, robustness, and generalisability to unseen data, as well as interpretability through explainabile AI. A reflection on the strengths, and weaknesses of the prototype is also provided, along with a discussion on the potential for future work. The evaluation was guided by a combination of empirical metrics, and a quantitative analysis.
+
+\section{Evaluation Methodology}
+\label{sec:evaluation-methodology}
+The evaluation methodology employed in this project seeks to answer the following research questions:
+\begin{itemize}
+    \item How accurately does the model classify mammogram images?
+    \item How robust and generalisable is the model to unseen data?
+    \item How interpretable are the model predictions, and what insights can be derived from Grad-CAM visualisations?
+    \item What are the strengths and weaknesses of the prototype, and what potential improvements can be made for future work?
+\end{itemize}
+
+To answer these questions, the evaluation process involved:
+\begin{itemize}
+    \item \textbf{Quantitative Analysis} \textemdash\ Assessing the model's performance using metrics such as accuracy, precision, recall, and F1-score on the test dataset.
+    \item \textbf{Robustness and Generalisability} \textemdash\ Evaluating the model's performance on unseen data to determine its robustness and generalisability.
+    \item \textbf{Explainable AI} \textemdash\ Using Grad-CAM visualisations to interpret the model's predictions and gain insights into the decision-making process.
+    \item \textbf{Reflection} \textemdash\ Critically reflecting on the strengths and weaknesses of the prototype, and discussing potential improvements for future work.
+\end{itemize}
+
+\section{Quantitative Results}
+\label{sec:quantitative-results}
+The model was evaluated on a test dataset of mammogram images, which is distinct from the training dataset in order to measure generalisability more effectively. As discussed previously, the evaluation metrics utilised include accuracy, precision, recall, and F1-score, as well as AUC score.
+
+\subsection{Performance}
+The following results were yielded for the custom-made CNN model.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Metric} & \textbf{Value} \\
+        \hline
+        Accuracy & 0.92 \\
+        Precision & 0.90 \\
+        Recall & 0.93 \\
+        F1-Score & 0.91 \\
+        AUC Score & 0.95 \\
+        \hline
+    \end{tabular}
+    \caption{Quantitative results of the custom-made CNN model on the test dataset.}
+    \label{tab:quantitative-results}
+\end{table}
+
+bla bla bla
+
+The VGG16-based model yielded the following results.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Metric} & \textbf{Value} \\
+        \hline
+        Accuracy & 0.93 \\
+        Precision & 0.92 \\
+        Recall & 0.93 \\
+        F1-Score & 0.92 \\
+        \hline
+    \end{tabular}
+    \caption{Quantitative results of the VGG16-based model on the test dataset.}
+    \label{tab:quantitative-results}
+\end{table}
+
+The ResNet50-based model yielded the following results.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Metric} & \textbf{Value} \\
+        \hline
+        Accuracy & 0.93 \\
+        Precision & 0.92 \\
+        Recall & 0.93 \\
+        F1-Score & 0.92 \\
+        \hline
+    \end{tabular}
+    \caption{Quantitative results of the ResNet50-based model on the test dataset.}
+    \label{tab:quantitative-results}
+\end{table}
+
+\section{Explainablity}
+\label{sec:explainability}
+
+\end{document}

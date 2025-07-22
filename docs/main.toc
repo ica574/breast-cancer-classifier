@@ -33,6 +33,8 @@
 \contentsline {subsection}{\numberline {5.3.1}Training the Model}{19}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Evaluating the Model}{19}{subsection.5.3.2}%
 \contentsline {section}{\numberline {5.4}Model Explanation}{19}{section.5.4}%
-\contentsline {chapter}{\numberline {A}Appendix Title}{21}{appendix.A}%
-\contentsline {chapter}{Bibliography}{22}{appendix.A}%
+\contentsline {chapter}{\numberline {6}Evaluation}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Evaluation Methodology}{21}{section.6.1}%
+\contentsline {chapter}{\numberline {A}Appendix Title}{22}{appendix.A}%
+\contentsline {chapter}{Bibliography}{23}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
