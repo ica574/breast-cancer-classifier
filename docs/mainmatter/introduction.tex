@@ -9,6 +9,14 @@ Upon the premise of this initiative, project 3.2 titled \textemdash Deep Learnin
 
 This introduction begins by stating the clinical, and technical motivation for this project, then presents research questions, and objectives, as well as an outline of the report structure.
 
+\section{User Requirements}
+\label{sec:intro_user_requirements}
+The main users of such a system would be radiologists, and clinicians within a clinical setting such as the NHS, particularly involved in breast cancer screening. Radiologists require a system that can provide accurate malignancy predictions which prioritises high-risk cases to reduce the workload, and offers explainable outputs (like through Grad-CAM heatmaps) to foster trust in the model's decisions. Clinicians require a system that can integrate seamlessly into existing systems, and supports rapid inference time, whilst minimising false positives that can lead to patient anxiety, and unnecessary follow-ups. As indirect stakeholders, patients would benefit from a system that can improve the accuracy of breast cancer screening, leading to earlier detection, and treatment, ultimately improving patient outcomes.
+
+\section{Stakeholder Requirements}
+\label{sec:intro_stakeholder_requirements}
+This project aligns with the NHS' 2025 initiative to explore AI-assisted mammoraphy systems, that aim to replace of of two radiologists in the screening process (as detailed in the project brief). Stakeholders, therefore, include NHS radiologists, hospital IT departments (for integrating the system into existing workflows), and regulatory bodies (like the MHRA for clinical approval). The system must comply with medical device regulations, whilst ensuring data privacy in accordance with GDPR regulations. It must also be computational feasible on hospital hardware through GPU-enabled servers. By understanding these needs, the system aims to reduce diagnostic, and turnaround times, alleviate radiologist workload, and improve patient outcomes through more accurate breast cancer screening.
+
 \section{Motivation}
 \label{sec:intro_motivation}
 Mammography is widely known as the de facto standard for early breast cancer screening. Despite this, the visual similarity between benign, and malignant lesions can challenge even the most experienced of radiologists, leading to skewed results, and misdiagnosis. Often, false positives lead to unnecessary follow-ups, and false negatives result in delayed treatment, which can prove deadly. Deep learning can significantly reduce these issues by learning from large collections of labelled scans, complementing radiologists, and improving the accuracy of mammography.
@@ -37,6 +45,8 @@ In a bid to answer these questions, the following will be performed.
 	\item Analyse the model's performance to identify the categories of issues where performance degrades, and identify mitigation strategies.
 	\item Reflect on integration into clinical settings, discussing how such a system helps to reduce radiologist workload in reading mammograms, and error rates.
 \end{itemize}
+
+\noindent Note: Due to time-constraints, the previously mentioned Django web application was omitted. Instead, the focus is on developing a proper convolutional neural network that is able to accurately discriminate between benign and malignant lesions in mammograms, and demonstrate it's decisions through the Grad-CAM framework.
 
 \section{Report Structure}
 \label{sec:intro_report_structure}
