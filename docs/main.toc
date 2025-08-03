@@ -35,6 +35,12 @@
 \contentsline {section}{\numberline {5.4}Model Explanation}{19}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Evaluation}{21}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Evaluation Methodology}{21}{section.6.1}%
-\contentsline {chapter}{\numberline {A}Appendix Title}{22}{appendix.A}%
-\contentsline {chapter}{Bibliography}{23}{appendix.A}%
+\contentsline {section}{\numberline {6.2}Quantitative Results}{21}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}VGG16-based Model}{22}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}ResNet50-based Model}{23}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Explainablity}{24}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Achievements}{25}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Summary}{25}{section.6.5}%
+\contentsline {chapter}{\numberline {A}Appendix Title}{26}{appendix.A}%
+\contentsline {chapter}{Bibliography}{27}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
