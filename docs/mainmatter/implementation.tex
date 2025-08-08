@@ -40,7 +40,7 @@ defined that specifies the structure of TFRecord data. A function is then
 defined to process the TFRecord files, and store the results into the
 previously defined \texttt{images}, and \texttt{labels} lists. 
 
-\begin{lstlisting}[language=Python, caption=Python example]
+\begin{lstlisting}[language=Python, caption={Data ingestion from TFRecord files.}]
 def read_file(files):
     mydata = (
         tf.data.TFRecordDataset(files, num_parallel_reads=4)
@@ -105,20 +105,92 @@ preprocessed training images, and their corresponding labels from the
 \texttt{traindf} DataFrame. This feeds the model during training. A similar
 generator is made for the testing set.
 
-\section{Model Definition}
-The model used for binary classification of breast tissue is a
-convolutional neural network, based upon a frozen \texttt{VGG16} layer,
-that uses pre-trained \texttt{ImageNet} weights. This is then followed
-by \texttt{Dense}, and \texttt{GlobalAveragePooling2D} layers, and
-fine-tuned accordingly.
+\subsection{Class Imbalance} The dataset utilised appears to be imbalanced with
+an 87:13 ratio of negative to positive samples. Without intervention, this leads
+to the model's outputs being skewed in a detrimental manner, where more false
+samples are likely to be produced. In order to address this, a callback is
+utilised from the standard TensorFlow API to compute class weights, and apply
+them during training. This scales the classes according to each one's scarcity
+in an attempt to offset the class imbalance, and correct the behaviour of the
+model. The class imbalance is indicated by the following statement.
 
-\begin{lstlisting}[language=Python, caption=Python example]
-myconv = VGG16(weights="imagenet", include_top=False, input_shape=(299, 299, 3))
-x = myconv.output
-x = GlobalAveragePooling2D()(x)
-x = Dense(1, activation="sigmoid", name="classifier")(x)
-model = Model(myconv.input, x)
+\begin{lstlisting}[language=Python, caption={A measure of class imbalance.}]
+print(np.bincount(y_train)/len(y_train))
 \end{lstlisting}
+
+\noindent The corrections are then computed by the following snippet.
+
+\begin{lstlisting}[language=Python, caption={Correcting the class imbalance.}]
+class_weights = compute_class_weight(
+    class_weight='balanced',
+    classes=np.unique(y_train),
+    y=y_train
+)
+class_weights = dict(enumerate(class_weights))
+\end{lstlisting}
+
+\noindent The resultant weights are then passed into the model during training,
+as an argument to the model's \texttt{fit} method.
+
+\section{Model Definition} Three models are then, each with the same
+classification head, but an altered base. These are binary classification models
+which are to be trained on breast cancer tissue mammograms, and powered by
+convolutional neural networks (CNNs). The first model is an entirely custom CNN,
+which is based upon a series of \texttt{Conv2D}, \texttt{BatchNormalization}, and
+\texttt{MaxPooling2D} layers. For the classifier head, these are then followed by
+\texttt{Dense}, and \texttt{GlobalAveragePooling2D} layers, and fine-tuned
+accordingly.
+
+\begin{lstlisting}[language=Python, caption={Custom CNN definition.}]
+input_tensor = Input(shape=(299, 299, 3))
+
+x = Conv2D(32, (3, 3), activation='relu', padding='same')(input_tensor)
+x = BatchNormalization()(x)
+x = MaxPooling2D((2, 2))(x)
+
+x = Conv2D(64, (3, 3), activation='relu', padding='same')(x)
+x = BatchNormalization()(x)
+x = MaxPooling2D((2, 2))(x)
+
+x = Conv2D(128, (3, 3), activation='relu', padding='same')(x)
+x = BatchNormalization()(x)
+x = MaxPooling2D((2, 2))(x)
+
+x = Conv2D(256, (3, 3), activation='relu', padding='same')(x)
+x = BatchNormalization()(x)
+x = MaxPooling2D((2, 2))(x)
+
+x = GlobalAveragePooling2D()(x)
+output = Dense(1, activation='sigmoid', name='classifier')(x)
+\end{lstlisting}
+
+\noindent The second model introduces transfer learning by supplanting the basis
+of the model, excluding the classifier head, with a VGG16 model. This
+significantly simplifies the model definition, and yields benefits in
+performance when classifying samples.
+
+\begin{lstlisting}[language=Python, caption={VGG16 model definition.}]
+vgg16_base = VGG16(weights="imagenet", include_top=False, input_shape=(299, 299, 3))
+classifier_head = vgg16_base.output
+classifier_head = GlobalAveragePooling2D()(classifier_head)
+classifier_head = Dense(1, activation="sigmoid", name="classifier")(classifier_head)
+vgg16_model = Model(vgg16_base.input, classifier_head)
+\end{lstlisting}
+
+\noindent Something similar is done with the third model, where ResNet50 is used instead of VGG16.
+
+\begin{lstlisting}[language=Python, caption={ResNet50 model definition.}]
+resnet50_base = ResNet50V2(weights="imagenet", include_top=False, input_shape=(299, 299, 3))
+classifier_head = resnet50_base.output
+classifier_head = GlobalAveragePooling2D()(classifier_head)
+classifier_head = Dense(1, activation="sigmoid", name="classifier")(classifier_head)
+resnet50_model = Model(resnet50_base.input, classifier_head)
+resnet50_model.summary()
+\end{lstlisting}
+
+\noindent The idea behind defining these models is to compare, and contrast
+between the different bases, and artchitectures for performance gains from the
+use of transfer learning, versus using an entirely custom model.
 
 \subsection{Training the Model}
 The model will now be trained, based on the previous definition. Garbage
@@ -129,17 +201,42 @@ model is compiled with an \texttt{adagrad} optimisation function, and binary
 cross-entropy loss function. The model is finally trained, with data being fed
 from the previously defined generators.
 
+\begin{lstlisting}[language=Python, caption={Compiling the custom CNN using the Adam optimiser, and a binary cross-entropy loss function.}]
+custom_cnn.compile(
+    optimizer=Adam(learning_rate=1e-4),
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
+\end{lstlisting}
+
+\noindent The following snippet shows the point at which the model is trained,
+including epoch count, inclusion of callbacks, validation data, and class
+weights.
+
+\begin{lstlisting}[language=Python, caption={Model training of the custom CNN.}]
+custom_cnn_history = custom_cnn.fit(
+    train_generator,
+    steps_per_epoch=len(train_generator),
+    epochs=5,
+    callbacks=[checkpoint, early],
+    validation_data=test_generator,
+    class_weight=class_weights
+)
+\end{lstlisting}
+
 \subsection{Evaluating the Model}
-This section evaluates the previously trained model using standard metrics like
-accuracy, and loss on the training, and validation sets. In the following cell,
-these metrics are extracted into variables for later use from the performance of
-the model across different epochs during training. This is then plotted, to
-visualise how the model's accuracy, and loss scores improved. Predictions are
-made on the test set are made in order to generate a final classification
-report, and confusion matrix. The previously-made predictions, and actual values
-are gathered, and fed into \texttt{scikit-learn} to generate the confusion
-matrix. The results are then plotted using \texttt{seaborn}. The same values are
-used to generate the final classification report.
+This section evaluates the previously trained models using standard metrics like
+accuracy, and loss on the training, and validation sets. These metrics are
+extracted into variables for later use from the performance of the model across
+different epochs during training. These are then plotted, to visualise how the
+model's accuracy, and loss scores improved. Predictions are made on the test set
+in order to generate a final classification report, and confusion matrix. The
+previously-made predictions, and actual values are gathered, and fed into
+\texttt{scikit-learn} to generate the confusion matrix. The results are then
+plotted using \texttt{seaborn}. The same values are used to generate the final
+classification report. The performances of the different models are plotted on
+the same accuracy, and loss graphs in order to demonstrate a clear distinction
+of performance between the different models.
  
 \section{Model Explanation}
 This final section touches upon XAI or explainable AI, by implementing
