@@ -34,12 +34,15 @@
 \contentsline {chapter}{\numberline {5}Evaluation}{17}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Evaluation Methodology}{17}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Quantitative Results}{17}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}VGG16-based Model}{18}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}ResNet50-based Model}{19}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Explainablity}{20}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Achievements}{21}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Summary}{21}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future Work}{22}{section.6.1}%
-\contentsline {chapter}{Bibliography}{23}{section.6.1}%
+\contentsline {subsection}{\numberline {5.2.1}Custom CNN-based Model}{18}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}VGG16-based Model}{18}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}ResNet50-based Model}{20}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Comparing the Models}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Explainablity}{22}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Achievements}{22}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Reflection}{22}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Summary}{23}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Conclusion}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future Work}{24}{section.6.1}%
+\contentsline {chapter}{Bibliography}{25}{section.6.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -9,23 +9,65 @@ This chapter details a comprehensive evaluation of the breast cancer classificat
 \label{sec:evaluation-methodology}
 The evaluation methodology employed in this project seeks to answer the following research questions:
 \begin{itemize}
-    \item How accurately does the model classify mammogram images?
-    \item How robust and generalisable is the model to unseen data?
+    \item How accurately do the models classify mammogram images?
+    \item How robust and generalisable are the models to unseen data?
     \item How interpretable are the model predictions, and what insights can be derived from Grad-CAM visualisations?
-    \item What are the strengths and weaknesses of the prototype, and what potential improvements can be made for future work?
+    \item What potential improvements can be made for future work?
 \end{itemize}
 
 To answer these questions, the evaluation process involved:
 \begin{itemize}
-    \item \textbf{Quantitative Analysis} \textemdash\ Assessing the model's performance using metrics such as accuracy, precision, recall, and F1-score on the test dataset.
-    \item \textbf{Robustness and Generalisability} \textemdash\ Evaluating the model's performance on unseen data to determine its robustness and generalisability.
-    \item \textbf{Explainable AI} \textemdash\ Using Grad-CAM visualisations to interpret the model's predictions and gain insights into the decision-making process.
-    \item \textbf{Reflection} \textemdash\ Critically reflecting on the strengths and weaknesses of the prototype, and discussing potential improvements for future work.
+    \item \textbf{Quantitative Analysis} \textemdash\ Assessing the performance of the models using metrics such as accuracy, precision, recall, and F1-score on the test dataset.
+    \item \textbf{Robustness and Generalisability} \textemdash\ Evaluating the performance of the models on unseen data to determine its robustness and generalisability.
+    \item \textbf{Explainable AI} \textemdash\ Using Grad-CAM visualisations to interpret the predictions of the models, and gain insights into the decision-making process.
+    \item \textbf{Reflection} \textemdash\ Critically reflecting on the strengths and weaknesses of the project, and discussing potential improvements for future work.
 \end{itemize}
 
 \section{Quantitative Results}
 \label{sec:quantitative-results}
-The model was evaluated on a test dataset of mammogram images, which is distinct from the training dataset in order to measure generalisability more effectively. As discussed previously, the evaluation metrics utilised include accuracy, precision, recall, and F1-score, as well as AUC score.
+The models were evaluated on a test dataset of mammogram images, which is distinct from the training dataset in order to measure generalisability more effectively. As discussed previously, the evaluation metrics utilised include accuracy, precision, recall, and F1-score, as well as AUC score.
+
+\subsection{Custom CNN-based Model}
+The first model, a Convolutional Neural Network (CNN) with the same classifier head as the other models, but a customised base architecture, yielded solid results.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+         & Precision & Recall & F1-score & Support \\ \hline
+        Negative & 0.96 & 0.89 & 0.93 & 13360.00 \\ \hline
+        Positive & 0.52 & 0.74 & 0.61 & 2004.00 \\ \hline
+        Accuracy & 0.88 & 0.88 & 0.88 & 0.88 \\ \hline
+        Macro Avg. & 0.74 & 0.82 & 0.77 & 15364.00 \\ \hline
+        Weighted Avg. & 0.90 & 0.88 & 0.88 & 15364.00 \\ \hline
+    \end{tabular}
+    \caption{Quantitative results of the custom CNN model.}
+    \label{tab:quantitative-results-custom-cnn}
+\end{table}
+
+\noindent bla bla bla
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
+                                & Negative         & Positive         \\ \hline
+        Negative                & 11955            & 1405              \\ \hline
+        Positive                & 512              & 1492              \\ \hline
+    \end{tabular}
+    \caption{Confusion matrix results of the custom CNN model.}
+    \label{tab:confusion-matrix-custom-cnn}
+\end{table}
+
+\noindent bla bla bla
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{assets/roc_custom_cnn.png}
+	\caption{ROC curve for the custom CNN model.}
+    \label{fig:roc-custom-cnn}
+\end{figure}
 
 \subsection{VGG16-based Model}
 The VGG16-based model yielded the following results. These results demonstrate a robust performance with an overall accuracy of 0.96, indicating a 96\% success rate in predicting actual outcomes. As for precision, and recall scores, both averaged 0.91, and 0.92 at the macro level, demonstrating a strong balance in identifying positive, and negative cases, with precision reflecting a 91\% likelihood that positive predicitons are valid, and recall showing that 92\% of actual positives were correctly categorised. The F1-score, also averaging 0.92, denotes the effectiveness of the model by harmonising precision, and recall, highlighting its reliability over both classes. These metrics altogether imply that the model is well-performing, although miniscule variations like higher precision, and recall scores for the negative class compared to those of the positive class indicate potential areas for improvement in handling the positive class more effectively.
@@ -35,13 +77,13 @@ The VGG16-based model yielded the following results. These results demonstrate a
     \begin{tabular}{|l|c|c|c|c|}
         \hline
          & Precision & Recall & F1-score & Support \\ \hline
-        Negative & 0.98 & 0.98 & 0.98 & 13360.00 \\ \hline
-        Positive & 0.85 & 0.86 & 0.85 & 2004.00 \\ \hline
-        Accuracy & 0.96 & 0.96 & 0.96 & 0.96 \\ \hline
-        Macro Avg. & 0.92 & 0.92 & 0.92 & 15364.00 \\ \hline
-        Weighted Avg. & 0.96 & 0.96 & 0.96 & 15364.00 \\ \hline
+        Negative & 0.98 & 0.96 & 0.97 & 13360.00 \\ \hline
+        Positive & 0.76 & 0.90 & 0.83 & 2004.00 \\ \hline
+        Accuracy & 0.95 & 0.95 & 0.95 & 0.95 \\ \hline
+        Macro Avg. & 0.87 & 0.93 & 0.90 & 15364.00 \\ \hline
+        Weighted Avg. & 0.96 & 0.95 & 0.95 & 15364.00 \\ \hline
     \end{tabular}
-    \caption{Quantitative results of the VGG16-based model}
+    \caption{Quantitative results of the VGG16-based model.}
     \label{tab:quantitative-results-vgg16}
 \end{table}
 
@@ -53,10 +95,10 @@ The VGG16-based model yielded the following results. These results demonstrate a
         \hline
         \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
                                 & Negative         & Positive         \\ \hline
-        Negative                & 13055            & 305              \\ \hline
-        Positive                & 286              & 1718              \\ \hline
+        Negative                & 12805            & 555              \\ \hline
+        Positive                & 198              & 1806              \\ \hline
     \end{tabular}
-    \caption{Confusion matrix results of the VGG16-based model}
+    \caption{Confusion matrix results of the VGG16-based model.}
     \label{tab:confusion-matrix-vgg16}
 \end{table}
 
@@ -66,7 +108,7 @@ The VGG16-based model yielded the following results. These results demonstrate a
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_vgg16.png}
 	\caption{ROC curve for the VGG16 model.}
-	\label{fig:prototype_architecture}
+    \label{fig:roc-vgg16}
 \end{figure}
 
 \subsection{ResNet50-based Model}
@@ -77,13 +119,13 @@ The classification results for the ResNet-based model indicate a highly effectiv
     \begin{tabular}{|l|c|c|c|c|}
         \hline
          & Precision & Recall & F1-score & Support \\ \hline
-        Negative & 0.98 & 0.98 & 0.98 & 13360.00 \\ \hline
-        Positive & 0.90 & 0.89 & 0.89 & 2004.00 \\ \hline
+        Negative & 0.99 & 0.98 & 0.98 & 13360.00 \\ \hline
+        Positive & 0.85 & 0.91 & 0.88 & 2004.00 \\ \hline
         accuracy & 0.97 & 0.97 & 0.97 & 0.97 \\ \hline
-        Macro Avg. & 0.94 & 0.94 & 0.94 & 15364.00 \\ \hline
+        Macro Avg. & 0.92 & 0.94 & 0.93 & 15364.00 \\ \hline
         Weighted Avg. & 0.97 & 0.97 & 0.97 & 15364.00 \\ \hline
     \end{tabular}
-    \caption{Quantitative results of the ResNet-based model}
+    \caption{Quantitative results of the ResNet50-based model.}
     \label{tab:quantitative-results-resnet}
 \end{table}
 
@@ -95,11 +137,11 @@ The confusion matrix results demonstrate that 13,158 images were correctly predi
         \hline
         \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
                                 & Negative         & Positive         \\ \hline
-        Negative                & 13158            & 202              \\ \hline
-        Positive                & 227              & 1777              \\ \hline
+        Negative                & 13040            & 320              \\ \hline
+        Positive                & 182              & 1822              \\ \hline
     \end{tabular}
-    \caption{Confusion matrix results of the VGG16-based model}
-    \label{tab:confusion-matrix-vgg16}
+    \caption{Confusion matrix results of the ResNet50-based model.}
+    \label{tab:confusion-matrix-resnet}
 \end{table}
 
 The ROC curve for this model indicates a sharp rise from a low FPR, to a high TPR which shows a robust ability to discriminate. With an AUC score of 0.94, this model exhibits an excellent capability to distinguish between positive, and negative classes, reflecting a high balance of sensitivity, and specificity.
@@ -108,7 +150,18 @@ The ROC curve for this model indicates a sharp rise from a low FPR, to a high TP
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_resnet.png}
 	\caption{ROC curve for the ResNet model.}
-	\label{fig:prototype_architecture}
+    \label{fig:roc-resnet}
+\end{figure}
+
+\section{Comparing the Models}
+\label{sec:comparing-models}
+The quantitative results of the three models indicate that all models perform well, with the ResNet50-based model achieving the highest accuracy of 0.97, followed closely by the VGG16-based model at 0.96, and the custom CNN-based model at 0.88. The precision, recall, and F1-score metrics also reflect strong performance across all models, with the ResNet50-based model showing the best balance between precision, and recall for both classes. The following chart demonstrates the comparison of the models across training epochs in terms of accuracy, and loss scores.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/comparison.png}
+    \caption{Comparison of the models across training epochs in terms of accuracy, and loss scores.}
+    \label{fig:comparison-models}
 \end{figure}
 
 \section{Explainablity}
@@ -119,6 +172,18 @@ Overall, the use of Grad-CAM significantly improves the usability of the models 
 
 \section{Achievements}
 This project has overseen the end-to-end development of a raw TFRecord ingestion system, that makes interpretable, and accurate predictions. A reasonably strong generalisation has been achieved using transfer learning on limited data given the AUC scores. Grad-CAM has also been effectively integrated for transparency, with minimal overfitting through the use of dropout, and early stopping.
+
+\section{Reflection}
+\label{sec:reflection}
+The project has successfully demonstrated the potential of deep learning-based models for breast cancer classification using mammogram images. The models have shown strong performance across various metrics, and the integration of Grad-CAM has provided valuable insights into the decision-making process of the models. However, there are several areas for improvement, including:
+\begin{itemize}
+    \item \textbf{Dataset Limitations} \textemdash\ The dataset used for training, and testing the models is relatively small, and imbalanced, which may limit the generalisability of the models. Although this was partially accounted for by computing, and utilising class weights, future work should focus on acquiring larger, and more diverse datasets to improve model performance.
+    \item \textbf{Model Complexity} \textemdash\ While the models have shown strong performance, there is potential for further refinement, and optimisation of the architectures to improve accuracy, and reduce overfitting.
+    \item \textbf{Evaluation Methodology} \textemdash\ The evaluation methodology could be enhanced by incorporating cross-validation techniques to provide more robust metrics, and reduce the risk of overfitting.
+    \item \textbf{Collaboration with Domain Experts} \textemdash\ Engaging with domain experts such as radiologists can provide valuable insights into the clinical relevance of the model predictions, and help refine the models further.
+    \item \textbf{Explainability} \textemdash\ While Grad-CAM has provided valuable insights into the model predictions, further research into explainable AI techniques can enhance the interpretability of the models, and improve trust in their predictions.
+\end{itemize}
+These areas for improvement highlight the potential for future work, and the ongoing development of deep learning-based models for breast cancer classification.
 
 \section{Summary}
 \label{sec:summary}

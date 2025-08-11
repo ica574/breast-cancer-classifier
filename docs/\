@@ -1,0 +1,180 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+\chapter{Evaluation}
+\label{ch:evaluation}
+This chapter details a comprehensive evaluation of the breast cancer classification models, implemented using transfer learning-based architectures, and including Grad-CAM visualisations for explainability. The objective of this is to critically determine the performance of the models across several metrics such as quantitative accuracy on the test data, robustness, and generalisability to unseen data, as well as interpretability through explainabile AI. A reflection on the strengths, and weaknesses of the prototype is also provided, along with a discussion on the potential for future work. The evaluation was guided by a combination of empirical metrics, and a quantitative analysis.
+
+\section{Evaluation Methodology}
+\label{sec:evaluation-methodology}
+The evaluation methodology employed in this project seeks to answer the following research questions:
+\begin{itemize}
+    \item How accurately do the models classify mammogram images?
+    \item How robust and generalisable are the models to unseen data?
+    \item How interpretable are the model predictions, and what insights can be derived from Grad-CAM visualisations?
+    \item What potential improvements can be made for future work?
+\end{itemize}
+
+To answer these questions, the evaluation process involved:
+\begin{itemize}
+    \item \textbf{Quantitative Analysis} \textemdash\ Assessing the performance of the models using metrics such as accuracy, precision, recall, and F1-score on the test dataset.
+    \item \textbf{Robustness and Generalisability} \textemdash\ Evaluating the performance of the models on unseen data to determine its robustness and generalisability.
+    \item \textbf{Explainable AI} \textemdash\ Using Grad-CAM visualisations to interpret the predictions of the models, and gain insights into the decision-making process.
+    \item \textbf{Reflection} \textemdash\ Critically reflecting on the strengths and weaknesses of the project, and discussing potential improvements for future work.
+\end{itemize}
+
+\section{Quantitative Results}
+\label{sec:quantitative-results}
+The models were evaluated on a test dataset of mammogram images, which is distinct from the training dataset in order to measure generalisability more effectively. As discussed previously, the evaluation metrics utilised include accuracy, precision, recall, and F1-score, as well as AUC score.
+
+\subsection{Custom CNN-based Model}
+The first model, a Convolutional Neural Network (CNN) with the same classifier head as the other models, but a customised base architecture, yielded solid results.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+         & Precision & Recall & F1-score & Support \\ \hline
+        Negative & 0.96 & 0.89 & 0.93 & 13360.00 \\ \hline
+        Positive & 0.52 & 0.74 & 0.61 & 2004.00 \\ \hline
+        Accuracy & 0.88 & 0.88 & 0.88 & 0.88 \\ \hline
+        Macro Avg. & 0.74 & 0.82 & 0.77 & 15364.00 \\ \hline
+        Weighted Avg. & 0.90 & 0.88 & 0.88 & 15364.00 \\ \hline
+    \end{tabular}
+    \caption{Quantitative results of the custom CNN model.}
+    \label{tab:quantitative-results-custom-cnn}
+\end{table}
+
+\noindent bla bla bla
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
+                                & Negative         & Positive         \\ \hline
+        Negative                & 11955            & 1405              \\ \hline
+        Positive                & 512              & 1492              \\ \hline
+    \end{tabular}
+    \caption{Confusion matrix results of the custom CNN model.}
+    \label{tab:confusion-matrix-custom-cnn}
+\end{table}
+
+\noindent bla bla bla
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{assets/roc_custom_cnn.png}
+	\caption{ROC curve for the custom CNN model.}
+    \label{fig:roc-custom-cnn}
+\end{figure}
+
+\subsection{VGG16-based Model}
+The VGG16-based model yielded the following results. These results demonstrate a robust performance with an overall accuracy of 0.96, indicating a 96\% success rate in predicting actual outcomes. As for precision, and recall scores, both averaged 0.91, and 0.92 at the macro level, demonstrating a strong balance in identifying positive, and negative cases, with precision reflecting a 91\% likelihood that positive predicitons are valid, and recall showing that 92\% of actual positives were correctly categorised. The F1-score, also averaging 0.92, denotes the effectiveness of the model by harmonising precision, and recall, highlighting its reliability over both classes. These metrics altogether imply that the model is well-performing, although miniscule variations like higher precision, and recall scores for the negative class compared to those of the positive class indicate potential areas for improvement in handling the positive class more effectively.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+         & Precision & Recall & F1-score & Support \\ \hline
+        Negative & 0.98 & 0.96 & 0.97 & 13360.00 \\ \hline
+        Positive & 0.76 & 0.90 & 0.83 & 2004.00 \\ \hline
+        Accuracy & 0.95 & 0.95 & 0.95 & 0.95 \\ \hline
+        Macro Avg. & 0.87 & 0.93 & 0.90 & 15364.00 \\ \hline
+        Weighted Avg. & 0.96 & 0.95 & 0.95 & 15364.00 \\ \hline
+    \end{tabular}
+    \caption{Quantitative results of the VGG16-based model.}
+    \label{tab:quantitative-results-vgg16}
+\end{table}
+
+\noindent The confusion matrix reveals the performance of the classification model, where out of the actual negative cases, 13,055 were correctly predicted negative, while 305 were incorrectly predicted as positive. This indicates a low false positive rate. On the other hand, for actual positive cases, 1,718 cases were correctly labeled as positive, whilst 286 were mistakenly classified as negative, showing a moderate false negative rate. The model shows a strong accuracy in identifying negative cases, with a high true negative rate. This may be owed to the relatively larger number of negative cases within the training dataset. Overall, the confusion matrix indicates a reliable model, with further enhancements to be made to enhance sensitivity to positive cases.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
+                                & Negative         & Positive         \\ \hline
+        Negative                & 12805            & 555              \\ \hline
+        Positive                & 198              & 1806              \\ \hline
+    \end{tabular}
+    \caption{Confusion matrix results of the VGG16-based model.}
+    \label{tab:confusion-matrix-vgg16}
+\end{table}
+
+\noindent The Receiver Operating Characteristic (ROC) curve for this model demonstrates a significant upward trend from a low false positive rate to a high true positive rate, showing a strong ability for discrimination. The area under the ROC curve also known as AUC is excellent at 0.92, denoting a strong ability to distinguish between positive, and negative classes. Overall, the curve indicates that the model effectively balances between sensitivity, and specificity, implying that the model is reliable for classifying benign from malignant tissue.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{assets/roc_vgg16.png}
+	\caption{ROC curve for the VGG16 model.}
+    \label{fig:roc-vgg16}
+\end{figure}
+
+\subsection{ResNet50-based Model}
+The classification results for the ResNet-based model indicate a highly effective performance, with an overall accuracy of 0.97, implying that 97\% of predictions are correct. Both precision, and recall scores for the negative class are robust at 0.98, meaning excellent identification of negative instances supported by a large sample size of 13.360. For the positive class, precision, and recall are slightly lower at 0.90, and 0.89 but are still strong, with a support of 2,004, showing consistent performance across both classes. The macro average of 0.94 for precision, recall, and F1-score demonstrates a balanced model performance, while the weighted average of 0.97 aligns with the overall accuracy of the model, accounting for class imbalance. These results together demonstrate a reliable model with some improvements to be made in positive class predictions.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+         & Precision & Recall & F1-score & Support \\ \hline
+        Negative & 0.99 & 0.98 & 0.98 & 13360.00 \\ \hline
+        Positive & 0.85 & 0.91 & 0.88 & 2004.00 \\ \hline
+        accuracy & 0.97 & 0.97 & 0.97 & 0.97 \\ \hline
+        Macro Avg. & 0.92 & 0.94 & 0.93 & 15364.00 \\ \hline
+        Weighted Avg. & 0.97 & 0.97 & 0.97 & 15364.00 \\ \hline
+    \end{tabular}
+    \caption{Quantitative results of the ResNet50-based model.}
+    \label{tab:quantitative-results-resnet}
+\end{table}
+
+The confusion matrix results demonstrate that 13,158 images were correctly predicted as negative, with only 202 incorrectly labelled as positive, reflecting a very low false positive rate. In terms of actual positive cases, 1,777 were correctly classified as posisive, while 227 were labelled incorrectly as negative showing a moderate false negative rate. This demonstrates a strongly performing model, with good precision in negative predictions.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multirow{2}{*}{Actual} & \multicolumn{2}{c|}{Predicted} \\ \cline{2-3}
+                                & Negative         & Positive         \\ \hline
+        Negative                & 13040            & 320              \\ \hline
+        Positive                & 182              & 1822              \\ \hline
+    \end{tabular}
+    \caption{Confusion matrix results of the ResNet50-based model.}
+    \label{tab:confusion-matrix-resnet}
+\end{table}
+
+The ROC curve for this model indicates a sharp rise from a low FPR, to a high TPR which shows a robust ability to discriminate. With an AUC score of 0.94, this model exhibits an excellent capability to distinguish between positive, and negative classes, reflecting a high balance of sensitivity, and specificity.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{assets/roc_resnet.png}
+	\caption{ROC curve for the ResNet model.}
+    \label{fig:roc-resnet}
+\end{figure}
+
+\section{Comparing the Models}
+\label{sec:comparing-models}
+The quantitative results of the three models indicate that all models perform well, with the ResNet50-based model achieving the highest accuracy of 0.97, followed closely by the VGG16-based model at 0.96, and the custom CNN-based model at 0.88. The precision, recall, and F1-score metrics also reflect strong performance across all models, with the ResNet50-based model showing the best balance between precision, and recall for both classes. The following chart demonstrates the comparison of the models across training epochs in terms of accuracy, and loss scores.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/comparison.png}
+    \caption{Comparison of the models across training epochs in terms of accuracy, and loss scores.}
+    \label{fig:comparison-models}
+\end{figure}
+
+\section{Explainablity}
+\label{sec:explainability}
+In order to assess the model's performance on predictions aligned with human-interpretable features, a series of images is presented with Grad-CAM overlays. This analysis can be implemented in a clinical system, which would allow radiologists to interpret, and trust decisions made by a CNN-based system. The ability to visually validate the reasoning process behind each decision increases trust in the system, and reduces the opacity of models, and aids in the diagnosis of errors.
+
+Overall, the use of Grad-CAM significantly improves the usability of the models in real-world situations, enabling the effective collaboration between human radiologists, and machines. Namely, in future studies, radiologists could rate the consistency, and usefulness of heatmaps on a Likert scale, or utilise them to flag low-confidence cases for further review.
+
+\section{Achievements}
+This project has overseen the end-to-end development of a raw TFRecord ingestion system, that makes interpretable, and accurate predictions. A reasonably strong generalisation has been achieved using transfer learning on limited data given the AUC scores. Grad-CAM has also been effectively integrated for transparency, with minimal overfitting through the use of dropout, and early stopping.
+
+\section{Summary}
+\label{sec:summary}
+This evaluation indicates that the proposed deep learning-based system performs adequately on test data, and allows for the useful interpretability via Grad-CAM. While results are promising, the system would not be ready for a production scenario due to dataset constraints that could be overcome given more powerful hardware to be able to train with it. Nonetheless, a solid foundation has been laid such that further refinement, and more intricate, and advanced loss functions, fine-tuning, and domain expert consultation can be made. In addition, further modifications to the evaluation of the models will be made to include cross-validation, which will give far more accurate metrics than the existing single-fold method of evaluation.
+
+\end{document}
