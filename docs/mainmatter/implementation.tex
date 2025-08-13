@@ -288,11 +288,19 @@ This final section touches upon XAI or explainable AI, by implementing
 indication of the parts of the image that influenced the classification made of
 the model, explaining the results achieved. This is done for the first ten
 images within the testing set, but can easily be done for any other image as
-well. The following function accepts a path to an image, the model used, and
-it's final layer, and returns the explained version of the image, and the
+well. A path to an image is accepted, the model is retrieved by it's final
+layer, and returns the explained version of the image, together with the
 classification result. A series of images is then passed through the
-aforementioned function, and plotted into a singular figure. In the above plot,
-warmer colours indicate higher influence on the model's predicted class, and
-cooler colours the opposite.
+aforementioned function, and plotted into a singular figure. Warmer colours
+indicate higher influence on the model's predicted class, and cooler colours
+the opposite.
+
+Something similar is done with the ViT model, where the target layer is
+retrieved. Hooks are set up where the output activations of the selected layer
+are saved, and the gradients coming back from the loss of that layer are also
+saved. A heatmap is then produced from the gradients, and the activations,
+which is then upsampled to the original image size. The heatmap is then plotted
+on top of the original image, with a colour map applied to it. The resultant
+image is then saved, and displayed.
 
 \end{document}
