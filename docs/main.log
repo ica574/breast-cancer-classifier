@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.5)  13 AUG 2025 11:35
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.5.5)  13 AUG 2025 12:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1463,7 +1463,7 @@ File: assets/roc_custom_cnn.png Graphic file (type bmp)
 <assets/roc_custom_cnn.png>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
@@ -1474,65 +1474,71 @@ File: assets/roc_vgg16.png Graphic file (type bmp)
 <assets/roc_vgg16.png>
 
 
-[21]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[21
+
+]
+
+[22]
 File: assets/roc_resnet.png Graphic file (type bmp)
 <assets/roc_resnet.png>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[22]
+[23
+
+]
+
+[24]
 File: assets/roc_vit.png Graphic file (type bmp)
 <assets/roc_vit.png>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 1019) has occurred while \output is active []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[23]
+[25
+
+]
+
+[26]
 File: assets/comparison.png Graphic file (type bmp)
 <assets/comparison.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[24]
 File: assets/grad_cam_custom_cnn.png Graphic file (type bmp)
 <assets/grad_cam_custom_cnn.png>
+
+
+[27
+
+]
 File: assets/grad_cam_vgg16.png Graphic file (type bmp)
 <assets/grad_cam_vgg16.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: assets/grad_cam_resnet50.png Graphic file (type bmp)
 <assets/grad_cam_resnet50.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: assets/grad_cam_vit.png Graphic file (type bmp)
 <assets/grad_cam_vit.png>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[25]
+[28]
 
-[26]) (./mainmatter/conclusion.tex
+[29]
 
-[27]
+[30
+
+]) (./mainmatter/conclusion.tex
+
+[31]
 chapter 6.
 
 Overfull \hbox (2.61668pt too wide) in paragraph at lines 12--13
@@ -1540,11 +1546,13 @@ Overfull \hbox (2.61668pt too wide) in paragraph at lines 12--13
 ures could be experimented
  []
 
-)) (./backmatter.tex
 
-[28
 
-])
+[32
+
+])) (./backmatter.tex
+
+[33])
 Overfull \hbox (7.9565pt too wide) in paragraph at lines 6--6
 []\TU/lmr/m/n/12 Bitao Jiang et al. “  Deep learning applications in breast can
 cer histopatho-
@@ -1552,12 +1560,12 @@ cer histopatho-
 
 
 
-[29
+[34
 
 
 ]
 
-[30] (./main.aux)
+[35] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1577,4 +1585,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  113i,20n,110p,10916b,5892s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (34 pages, 794456 bytes).
+Output written on main.xdv (39 pages, 805672 bytes).

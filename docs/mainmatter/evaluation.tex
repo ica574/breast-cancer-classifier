@@ -30,7 +30,7 @@ The models were evaluated on a test dataset of mammogram images, which is distin
 \subsection{Custom CNN-based Model}
 The first model, a Convolutional Neural Network (CNN) with the same classifier head as the other models, but a customised base architecture, yielded solid results. The model achieved an overall accuracy of 0.88, indicating that 88\% of the predictions were correct. The precision, and recall scores for the negative class were 0.96, and 0.89 respectively, indicating a strong ability to identify negative cases, while the positive class had lower scores of 0.52 for precision, and 0.74 for recall, suggesting that the model struggled to identify positive cases effectively. The F1-score averaged at 0.77 across both classes, reflecting a balance between precision, and recall. The macro average scores of 0.74 for precision, and 0.82 for recall indicate a moderate performance across both classes, while the weighted averages of 0.90 for precision, and 0.88 for recall reflect the model's overall effectiveness.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
         \hline
@@ -47,7 +47,7 @@ The first model, a Convolutional Neural Network (CNN) with the same classifier h
 
 \noindent The confusion matrix reveals that out of the actual negative cases, 11,955 were correctly predicted as negative, while 1,405 were incorrectly predicted as positive. This indicates a low false positive rate. On the other hand, for actual positive cases, 512 were correctly classified as positive, while 1,492 were mistakenly classified as negative, showing a high false negative rate. This suggests that the model has a strong ability to identify negative cases but struggles with positive cases.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -62,17 +62,19 @@ The first model, a Convolutional Neural Network (CNN) with the same classifier h
 
 \noindent The Receiver Operating Characteristic (ROC) curve for this model shows a moderate upward trend from a low false positive rate to a high true positive rate, indicating a reasonable ability to discriminate between positive, and negative classes. The area under the ROC curve (AUC) is 0.88, which indicates a good ability to distinguish between the two classes, but with room for improvement.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_custom_cnn.png}
 	\caption{ROC curve for the custom CNN model.}
     \label{fig:roc-custom-cnn}
 \end{figure}
 
+\clearpage
+
 \subsection{VGG16-based Model}
 The VGG16-based model yielded the following results. These results demonstrate a robust performance with an overall accuracy of 0.96, indicating a 96\% success rate in predicting actual outcomes. As for precision, and recall scores, both averaged 0.91, and 0.92 at the macro level, demonstrating a strong balance in identifying positive, and negative cases, with precision reflecting a 91\% likelihood that positive predicitons are valid, and recall showing that 92\% of actual positives were correctly categorised. The F1-score, also averaging 0.92, denotes the effectiveness of the model by harmonising precision, and recall, highlighting its reliability over both classes. These metrics altogether imply that the model is well-performing, although miniscule variations like higher precision, and recall scores for the negative class compared to those of the positive class indicate potential areas for improvement in handling the positive class more effectively.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
         \hline
@@ -89,7 +91,7 @@ The VGG16-based model yielded the following results. These results demonstrate a
 
 \noindent The confusion matrix reveals the performance of the classification model, where out of the actual negative cases, 13,055 were correctly predicted negative, while 305 were incorrectly predicted as positive. This indicates a low false positive rate. On the other hand, for actual positive cases, 1,718 cases were correctly labeled as positive, whilst 286 were mistakenly classified as negative, showing a moderate false negative rate. The model shows a strong accuracy in identifying negative cases, with a high true negative rate. This may be owed to the relatively larger number of negative cases within the training dataset. Overall, the confusion matrix indicates a reliable model, with further enhancements to be made to enhance sensitivity to positive cases.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -104,17 +106,19 @@ The VGG16-based model yielded the following results. These results demonstrate a
 
 \noindent The Receiver Operating Characteristic (ROC) curve for this model demonstrates a significant upward trend from a low false positive rate to a high true positive rate, showing a strong ability for discrimination. The area under the ROC curve also known as AUC is excellent at 0.92, denoting a strong ability to distinguish between positive, and negative classes. Overall, the curve indicates that the model effectively balances between sensitivity, and specificity, implying that the model is reliable for classifying benign from malignant tissue.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_vgg16.png}
 	\caption{ROC curve for the VGG16 model.}
     \label{fig:roc-vgg16}
 \end{figure}
 
+\clearpage
+
 \subsection{ResNet50-based Model}
 The classification results for the ResNet-based model indicate a highly effective performance, with an overall accuracy of 0.97, implying that 97\% of predictions are correct. Both precision, and recall scores for the negative class are robust at 0.98, meaning excellent identification of negative instances supported by a large sample size of 13.360. For the positive class, precision, and recall are slightly lower at 0.90, and 0.89 but are still strong, with a support of 2,004, showing consistent performance across both classes. The macro average of 0.94 for precision, recall, and F1-score demonstrates a balanced model performance, while the weighted average of 0.97 aligns with the overall accuracy of the model, accounting for class imbalance. These results together demonstrate a reliable model with some improvements to be made in positive class predictions.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
         \hline
@@ -131,7 +135,7 @@ The classification results for the ResNet-based model indicate a highly effectiv
 
 \noindent The confusion matrix results demonstrate that 13,158 images were correctly predicted as negative, with only 202 incorrectly labelled as positive, reflecting a very low false positive rate. In terms of actual positive cases, 1,777 were correctly classified as posisive, while 227 were labelled incorrectly as negative showing a moderate false negative rate. This demonstrates a strongly performing model, with good precision in negative predictions.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -146,17 +150,19 @@ The classification results for the ResNet-based model indicate a highly effectiv
 
 \noindent The ROC curve for this model indicates a sharp rise from a low FPR, to a high TPR which shows a robust ability to discriminate. With an AUC score of 0.94, this model exhibits an excellent capability to distinguish between positive, and negative classes, reflecting a high balance of sensitivity, and specificity.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_resnet.png}
 	\caption{ROC curve for the ResNet model.}
     \label{fig:roc-resnet}
 \end{figure}
 
+\clearpage
+
 \subsection{Vision Transformer Model}
 The Vision Transformer (ViT) model, which is a more recent architecture, also yielded strong results. The model achieved an overall accuracy of 0.97, indicating a high level of performance in classifying mammogram images. The precision, recall, and F1-score for the negative class were 0.98, 0.99, and 0.98 respectively, demonstrating excellent performance in identifying negative cases. For the positive class, the precision was 0.92, recall was 0.87, and F1-score was 0.89, indicating a solid performance but with room for improvement in identifying positive cases. The macro average scores of 0.95 for precision and 0.93 for recall indicate a balanced performance across both classes, while the weighted averages of 0.97 for all metrics reflect the model's overall effectiveness.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l|c|c|c|c|}
         \hline
@@ -173,7 +179,7 @@ The Vision Transformer (ViT) model, which is a more recent architecture, also yi
 
 \noindent The confusion matrix for the ViT model shows that 13,214 images were correctly predicted as negative, with only 146 incorrectly labelled as positive, indicating a very low false positive rate. For the actual positive cases, 1,737 were correctly classified as positive, while 267 were labelled incorrectly as negative, showing a moderate false negative rate. This indicates that the model is performing well in identifying negative cases, but there is still room for improvement in identifying positive cases.
 
-\begin{table}[h]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -188,18 +194,20 @@ The Vision Transformer (ViT) model, which is a more recent architecture, also yi
 
 \noindent The ROC curve for the ViT model shows a strong upward trend from a low false positive rate to a high true positive rate, indicating a robust ability to discriminate between positive, and negative classes. The AUC score of 0.93 reflects an excellent capability to distinguish between the two classes, demonstrating a high balance of sensitivity, and specificity.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\textwidth]{assets/roc_vit.png}
 	\caption{ROC curve for the ViT model.}
     \label{fig:roc-vit}
 \end{figure}
 
+\clearpage
+
 \section{Comparing the Models}
 \label{sec:comparing-models}
 The custom CNN network is considered as a baseline. The quantitative results of the four models indicate that all models perform well, with the ResNet50-based model achieving the highest accuracy of 0.97, with near identical results to the ViT model, followed closely by the VGG16-based model at 0.96, and the custom CNN-based model at 0.88. The precision, recall, and F1-score metrics also reflect strong performance across all models, with the ResNet50-based model showing the best balance between precision, and recall for both classes. The following chart demonstrates the comparison of the models across training epochs in terms of accuracy, and loss scores.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{assets/comparison.png}
     \caption{Comparison of the CNN models across training epochs in terms of accuracy, and loss scores.}
@@ -214,33 +222,35 @@ In order to assess the model's performance on predictions aligned with human-int
 
 Overall, the use of Grad-CAM significantly improves the usability of the models in real-world situations, enabling the effective collaboration between human radiologists, and machines. Namely, in future studies, radiologists could rate the consistency, and usefulness of heatmaps on a Likert scale, or utilise them to flag low-confidence cases for further review. Below are some of the images with Grad-CAM overlays, demonstrating the model's focus on relevant features in the mammogram images.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/grad_cam_custom_cnn.png}
     \caption{Example of Grad-CAM overlay on a mammogram image for the custom CNN.}
     \label{fig:grad-cam-custom-cnn}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/grad_cam_vgg16.png}
     \caption{Example of Grad-CAM overlay on a mammogram image for the VGG16-based network.}
     \label{fig:grad-cam-vgg16}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/grad_cam_resnet50.png}
     \caption{Example of Grad-CAM overlay on a mammogram image for the ResNet50-based network.}
     \label{fig:grad-cam-resnet50}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/grad_cam_vit.png}
     \caption{Example of Grad-CAM overlay on a mammogram image for the ViT-based network.}
     \label{fig:grad-cam-vit}
 \end{figure}
+
+\clearpage
 
 \section{Achievements}
 This project has overseen the end-to-end development of a raw TFRecord ingestion system, that makes interpretable, and accurate predictions. A reasonably strong generalisation has been achieved using transfer learning on limited data given the AUC scores. Grad-CAM has also been effectively integrated for transparency, with minimal overfitting through the use of dropout, and early stopping.
