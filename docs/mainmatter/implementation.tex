@@ -117,7 +117,6 @@ augmentation is defined as follows, and is applied to the training, and testing
 data before it is fed into the model.
 
 \begin{lstlisting}[language=Python, caption={Data augmentation for the ViT model.}]
-
 augment = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
@@ -131,7 +130,6 @@ def transform(example_batch):
 
 prepared_train_ds = train_dataset.with_transform(transform)
 prepared_test_ds = test_dataset.with_transform(transform)
-
 \end{lstlisting}
 
 \subsection{Class Imbalance}
@@ -142,13 +140,7 @@ samples are likely to be produced. In order to address this, a callback is
 utilised from the standard TensorFlow API to compute class weights, and apply
 them during training. This scales the classes according to each one's scarcity
 in an attempt to offset the class imbalance, and correct the behaviour of the
-model. The class imbalance is indicated by the following statement.
-
-\begin{lstlisting}[language=Python, caption={A measure of class imbalance.}]
-print(np.bincount(y_train)/len(y_train))
-\end{lstlisting}
-
-\noindent The corrections are then computed by the following snippet.
+model. The corrections are computed by the following snippet.
 
 \begin{lstlisting}[language=Python, caption={Correcting the class imbalance.}]
 class_weights = compute_class_weight(

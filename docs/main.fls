@@ -479,6 +479,9 @@ INPUT mainmatter/design.tex
 INPUT ./mainmatter/design.tex
 INPUT ./mainmatter/design.tex
 INPUT mainmatter/design.tex
+INPUT ./assets/architectural_diagram.png
+INPUT ./assets/architectural_diagram.png
+INPUT assets/architectural_diagram.png
 INPUT ./mainmatter/implementation.tex
 INPUT ./mainmatter/implementation.tex
 INPUT mainmatter/implementation.tex
