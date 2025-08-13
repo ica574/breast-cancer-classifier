@@ -103,9 +103,39 @@ rescaling their pixel values. Each pixel is normalised into the range 0, to
 efficiency, and performance. The training generator yields batches of
 preprocessed training images, and their corresponding labels from the
 \texttt{traindf} DataFrame. This feeds the model during training. A similar
-generator is made for the testing set.
+generator is made for the testing set. As for the ViT model, the training, and
+testing data is further encapsulated into a HuggingFace dataset.
 
-\subsection{Class Imbalance} The dataset utilised appears to be imbalanced with
+\subsection{Data Augmentation}
+The dataset is already pre-augmented, but further augmentation is applied to
+the training data for the ViT model to improve its generalisation capabilities.
+This is done by applying random transformations to the training images, such as
+horizontal flipping, and rotations. The augmentation is done using the
+\texttt{transforms} function from the \texttt{torchvision} library, which
+allows for easy application of various transformations to the images. The
+augmentation is defined as follows, and is applied to the training, and testing
+data before it is fed into the model.
+
+\begin{lstlisting}[language=Python, caption={Data augmentation for the ViT model.}]
+
+augment = transforms.Compose([
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomRotation(10),
+])
+
+def transform(example_batch):
+    images = [augment(Image.open(f).convert("RGB")) for f in example_batch["file"]]
+    inputs = processor(images, return_tensors="pt")
+    inputs["labels"] = [int(lbl) for lbl in example_batch["label"]]
+    return inputs
+
+prepared_train_ds = train_dataset.with_transform(transform)
+prepared_test_ds = test_dataset.with_transform(transform)
+
+\end{lstlisting}
+
+\subsection{Class Imbalance}
+The dataset utilised appears to be imbalanced with
 an 87:13 ratio of negative to positive samples. Without intervention, this leads
 to the model's outputs being skewed in a detrimental manner, where more false
 samples are likely to be produced. In order to address this, a callback is
@@ -132,14 +162,15 @@ class_weights = dict(enumerate(class_weights))
 \noindent The resultant weights are then passed into the model during training,
 as an argument to the model's \texttt{fit} method.
 
-\section{Model Definition} Three models are then, each with the same
-classification head, but an altered base. These are binary classification models
-which are to be trained on breast cancer tissue mammograms, and powered by
-convolutional neural networks (CNNs). The first model is an entirely custom CNN,
-which is based upon a series of \texttt{Conv2D}, \texttt{BatchNormalization}, and
-\texttt{MaxPooling2D} layers. For the classifier head, these are then followed by
-\texttt{Dense}, and \texttt{GlobalAveragePooling2D} layers, and fine-tuned
-accordingly.
+\section{Model Definition}
+Four models are defined, three of which are CNN-based, and another one which is
+transformer-based. Each CNN is defined with the same classification head, but
+an altered base. These models are made to handle binary classification tasks,
+which are to be trained on breast cancer tissue mammograms. The first model is
+an entirely custom CNN, which is based upon a series of \texttt{Conv2D},
+\texttt{BatchNormalization}, and \texttt{MaxPooling2D} layers. For the
+classifier head, these are then followed by \texttt{Dense}, and
+\texttt{GlobalAveragePooling2D} layers, and fine-tuned accordingly.
 
 \begin{lstlisting}[language=Python, caption={Custom CNN definition.}]
 input_tensor = Input(shape=(299, 299, 3))
@@ -187,6 +218,27 @@ classifier_head = Dense(1, activation="sigmoid", name="classifier")(classifier_h
 resnet50_model = Model(resnet50_base.input, classifier_head)
 resnet50_model.summary()
 \end{lstlisting}
+
+\noindent The fourth model is transformer-based, and uses the \texttt{ViT} or
+Vision Transformer architecture. The foundation model used is the
+\texttt{facebook/deit-tiny-patch16-224} model provided by Facebook, which is a
+small \texttt{ViT} model, and is more suited for the hardware used in this
+project. The transformer is fine-tuned on the breast cancer dataset. It is also
+worth noting that this model utilises a PyTorch backend, and is loaded using
+HuggingFace's \texttt{transformers} library. Due to this, the programmatic
+definitions for training will slightly differ from the other CNN-based models.
+
+\begin{lstlisting}[language=Python, caption={Vision Transformer model definition.}]
+labels_list = ["Negative", "Positive"]
+model = ViTForImageClassification.from_pretrained(
+    'facebook/deit-tiny-patch16-224',
+    num_labels=len(labels_list),
+    id2label={str(i): c for i, c in enumerate(labels_list)},
+    label2id={c: str(i) for i, c in enumerate(labels_list)},
+    ignore_mismatched_sizes=True
+)
+\end{lstlisting}
+
 
 \noindent The idea behind defining these models is to compare, and contrast
 between the different bases, and artchitectures for performance gains from the

@@ -26,23 +26,25 @@
 \contentsline {subsection}{\numberline {4.2.2}Preparing Data for Testing}{13}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Visualisation}{13}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Data Generators}{13}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Class Imbalance}{14}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Model Definition}{14}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Training the Model}{15}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Evaluating the Model}{16}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Model Explanation}{16}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Evaluation}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluation Methodology}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Quantitative Results}{17}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Custom CNN-based Model}{18}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}VGG16-based Model}{18}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}ResNet50-based Model}{20}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Comparing the Models}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Explainablity}{22}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Achievements}{22}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Reflection}{22}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Summary}{23}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Conclusion}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future Work}{24}{section.6.1}%
-\contentsline {chapter}{Bibliography}{25}{section.6.1}%
+\contentsline {subsection}{\numberline {4.2.5}Data Augmentation}{14}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Class Imbalance}{14}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Model Definition}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Training the Model}{16}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Evaluating the Model}{17}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Model Explanation}{17}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Evaluation}{18}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluation Methodology}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Quantitative Results}{18}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Custom CNN-based Model}{19}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}VGG16-based Model}{19}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}ResNet50-based Model}{21}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Vision Transformer Model}{22}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Comparing the Models}{24}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Explainablity}{24}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Achievements}{25}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Reflection}{26}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Summary}{27}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Conclusion}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future Work}{28}{section.6.1}%
+\contentsline {chapter}{Bibliography}{29}{section.6.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

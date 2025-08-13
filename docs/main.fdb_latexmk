@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1754221976.2758 "main.bcf" "main.bbl" "main" 1754758661.25709 0
-  "main.bcf" 1754758660.10145 113323 6fdfc176d6efe18e6e1fb5236f7ef30d "xelatex"
+["biber main"] 1754221976.2758 "main.bcf" "main.bbl" "main" 1755077762.5102 0
+  "main.bcf" 1755077756.97259 113323 6fdfc176d6efe18e6e1fb5236f7ef30d "xelatex"
   "references.bib" 1752912018.51525 8236 bbc9b5c7e3d193e6d78cef6cc02727cb ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["xdvipdfmx"] 1754758660.18092 "main.xdv" "main.pdf" "main" 1754758661.26729 0
-  "main.xdv" 1754758660.1025 698432 d85414d084c6b22effbd1c858df59ded "xelatex"
+["xdvipdfmx"] 1755077757.05388 "main.xdv" "main.pdf" "main" 1755077762.51234 0
+  "main.xdv" 1755077756.97369 794456 0c7694ee971356a9aadabb95ce4fe793 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1754758657.1767 "main.tex" "main.xdv" "main" 1754758661.25722 0
+["xelatex"] 1755077754.46672 "main.tex" "main.xdv" "main" 1755077762.51027 0
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -243,23 +243,28 @@
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "assets/University-of-London.eps" 1752912018.50429 525282 5c5f645239b15133bb8e3ce42d5119de ""
   "assets/comparison.png" 1754757798.40615 152354 c9d54f3574efff323512dfc09b4c76a4 ""
+  "assets/grad_cam_custom_cnn.png" 1755077285.51564 2963424 1837fee593fba9a1cb3e43cac976c623 ""
+  "assets/grad_cam_resnet50.png" 1755077430.85207 1158191 b92cc9aae48b308800890783dcc1b2d6 ""
+  "assets/grad_cam_vgg16.png" 1755077341.86596 2803188 280e53720bb50f91df90938f176e1254 ""
+  "assets/grad_cam_vit.png" 1755077456.8623 1499732 e286b45a48720d9166fb974d99f6df58 ""
   "assets/roc_custom_cnn.png" 1754757725.39478 36188 a3db332c75c76f5f2c7a03a489a587ed ""
-  "assets/roc_resnet.png" 1754757760.5001 34900 01a0a1750d05c56cfcdedb8c3269cbed ""
-  "assets/roc_vgg16.png" 1754757747.10685 35016 a5c9edb2d2ef2812acc56de438c06239 ""
+  "assets/roc_resnet.png" 1754944145.18003 34900 01a0a1750d05c56cfcdedb8c3269cbed ""
+  "assets/roc_vgg16.png" 1754944145.18033 35016 a5c9edb2d2ef2812acc56de438c06239 ""
+  "assets/roc_vit.png" 1755072604.21545 34211 6963838975b4dca4f418de26b656c484 ""
   "backmatter.tex" 1754234693.92308 131 a7abfbe513a897f235a66d35b5c6d093 ""
   "frontmatter.tex" 1752912018.50723 273 dc8cff6dfbc6d12e99403bf4dc42e600 ""
   "frontmatter/abstract.tex" 1754233317.89478 920 75a7a5c09c4427c2ee5ad4914e0fa206 ""
-  "main.aux" 1754758660.09285 19076 bf45d36c6ac5f53127c1abff8b899464 "xelatex"
+  "main.aux" 1755077756.9638 21692 5d21a7867af77f8510f25bfbc1707102 "xelatex"
   "main.bbl" 1754221986.37063 30396 83fa50e740638fc6d8b54fe2615376ab "biber main"
-  "main.out" 1754758659.20633 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "main.run.xml" 1754758660.10237 2346 a92eb0f297ccf74f51e282d944c30a10 "xelatex"
+  "main.out" 1755077756.048 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "main.run.xml" 1755077756.97354 2346 a92eb0f297ccf74f51e282d944c30a10 "xelatex"
   "main.tex" 1752912018.51182 108 1cbbe7073bfe2e2c1c6b118a2438e02f ""
-  "main.toc" 1754758660.10247 3847 6ac9cbe41b07fba4c0c7dd05bb51539b "xelatex"
+  "main.toc" 1755077756.97363 4030 3a2f339046f408fec30ae63ca06e946b "xelatex"
   "mainmatter.tex" 1754221801.68351 275 1055307fbe6daec065ff08cd4c1df08b ""
   "mainmatter/conclusion.tex" 1754231887.10108 2257 0cdd9d2b0e085719b03cedbfe507bd2e ""
   "mainmatter/design.tex" 1754749588.27884 5881 06cdb7decdb7eb82cb25b271a852dafb ""
-  "mainmatter/evaluation.tex" 1754758648.84416 15476 d7e5702ae8a08d20f8d020c43883854f ""
-  "mainmatter/implementation.tex" 1754749588.2792 12873 76ef761c666924778784cbe9cf96cf28 ""
+  "mainmatter/evaluation.tex" 1755077750.58944 21879 3a04e70487a710a0a946102594bd5d9d ""
+  "mainmatter/implementation.tex" 1755075182.62846 15259 5ccbb71f4a108b7c0c54bd253630e12a ""
   "mainmatter/introduction.tex" 1754234676.55818 8806 fdb064f0b91dc1d203c31133ec5e3ed1 ""
   "mainmatter/lit_rev.tex" 1752912018.51462 13943 afa69c967f5c5a5c9c4b0e5d225761d8 ""
   "preamble.tex" 1754221801.6111 2710 41a4e608a8d5eeb6f33017dd38226827 ""
