@@ -24,15 +24,15 @@ by the subroutines in the following stages of the implementation.
 This section focuses on loading, and preparing data for training, and testing
 from TFRecord files. A random seed is firstly set so that results are
 reproducibile. Due to the limitations of the hardware utilised for this
-project, a small subset of the DDSM dataset, sourced from Kaggle, was utilised,
-with pre-augmented images. The dataset was provided in the form of TensorFlow's
-TFRecord format, which is a binary format that allows for efficient storage and
-retrieval of large datasets. Each TFRecord file contains three fields,
-\texttt{image}, \texttt{label}, and \texttt{label\_normal}. The \texttt{image}
-field contains the raw, flattened image data, the \texttt{label} field contains
-the label for the image in the form of a binary integer class (0 for benign,
-and 1 for malignant classifications), and the \texttt{label\_normal} field
-contains a normalised version of the label for direct use in training.
+project, a small subset of the DDSM dataset, sourced from Kaggle, was utilised.
+The dataset was provided in the form of TensorFlow's TFRecord format, which is
+a binary format that allows for efficient storage and retrieval of large
+datasets. Each TFRecord file contains three fields, \texttt{image},
+\texttt{label}, and \texttt{label\_normal}. The \texttt{image} field contains
+the raw, flattened image data, the \texttt{label} field contains the label for
+the image in the form of a binary integer class (0 for benign, and 1 for
+malignant classifications), and the \texttt{label\_normal} field contains a
+normalised version of the label for direct use in training.
 
 
 Two empty lists are first initialised for images, and labels with a dictionary
@@ -107,14 +107,13 @@ generator is made for the testing set. As for the ViT model, the training, and
 testing data is further encapsulated into a HuggingFace dataset.
 
 \subsection{Data Augmentation}
-The dataset is already pre-augmented, but further augmentation is applied to
-the training data for the ViT model to improve its generalisation capabilities.
-This is done by applying random transformations to the training images, such as
-horizontal flipping, and rotations. The augmentation is done using the
-\texttt{transforms} function from the \texttt{torchvision} library, which
-allows for easy application of various transformations to the images. The
-augmentation is defined as follows, and is applied to the training, and testing
-data before it is fed into the model.
+Further augmentation is applied to the training data for the ViT model to
+improve its generalisation capabilities. This is done by applying random
+transformations to the training images, such as horizontal flipping, and
+rotations. The augmentation is done using the \texttt{transforms} function from
+the \texttt{torchvision} library, which allows for easy application of various
+transformations to the images. The augmentation is defined as follows, and is
+applied to the training, and testing data before it is fed into the model.
 
 \begin{lstlisting}[language=Python, caption={Data augmentation for the ViT model.}]
 augment = transforms.Compose([
