@@ -25,10 +25,9 @@
 \contentsline {section}{\numberline {4.2}Data Manipulation}{13}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Preparing Data for Training}{14}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Preparing Data for Testing}{14}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Visualisation}{14}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Data Generators}{14}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Data Augmentation}{15}{subsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.2.6}Class Imbalance}{15}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.3}Data Generators}{14}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Data Augmentation}{15}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Class Imbalance}{15}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Model Definition}{16}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Training the Model}{17}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Evaluating the Model}{18}{subsection.4.3.2}%
