@@ -18,83 +18,57 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global/global}
-    \entry{ayana2021transfer}{misc}{}{}
-      \name{author}{3}{}{%
-        {{hash=257d11e6b687309b78851922d7560eb2}{%
-           family={Ayana},
-           familyi={A\bibinitperiod},
-           given={G},
-           giveni={G\bibinitperiod}}}%
-        {{hash=d5b7df1d70cae6570cf239c89384e703}{%
-           family={Dese},
-           familyi={D\bibinitperiod},
-           given={K},
-           giveni={K\bibinitperiod}}}%
-        {{hash=45f85e1ea7df261f687455b66ce0e61b}{%
-           family={Choe},
-           familyi={C\bibinitperiod},
-           given={SW},
-           giveni={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{fullhash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{fullhashraw}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{bibnamehash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{authorbibnamehash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{authornamehash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{authorfullhash}{f85e4f559c383d23d26d41ac79fd4bef}
-      \strng{authorfullhashraw}{f85e4f559c383d23d26d41ac79fd4bef}
-      \field{labelalpha}{ADC21}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Transfer learning in breast cancer diagnoses via ultrasound imaging. Cancers 13: 738}
-      \field{year}{2021}
-    \endentry
+  \datalist[entry]{nyt/global//global/global/global}
     \entry{araujo2017classification}{article}{}{}
       \name{author}{8}{}{%
-        {{hash=921d1d5527377e5212ccff9240e5656e}{%
+        {{un=0,uniquepart=base,hash=921d1d5527377e5212ccff9240e5656e}{%
            family={Araújo},
            familyi={A\bibinitperiod},
            given={Teresa},
-           giveni={T\bibinitperiod}}}%
-        {{hash=f1d919b1a9425214752b8916ee7bbce7}{%
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1d919b1a9425214752b8916ee7bbce7}{%
            family={Aresta},
            familyi={A\bibinitperiod},
            given={Guilherme},
-           giveni={G\bibinitperiod}}}%
-        {{hash=e49e72a6282b74ca9922a2553cb4d391}{%
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e49e72a6282b74ca9922a2553cb4d391}{%
            family={Castro},
            familyi={C\bibinitperiod},
            given={Eduardo},
-           giveni={E\bibinitperiod}}}%
-        {{hash=829f352b963327533a704adce4c6d64e}{%
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=829f352b963327533a704adce4c6d64e}{%
            family={Rouco},
            familyi={R\bibinitperiod},
            given={José},
-           giveni={J\bibinitperiod}}}%
-        {{hash=f4a2620c86f09ce76040f97a55ad58a1}{%
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f4a2620c86f09ce76040f97a55ad58a1}{%
            family={Aguiar},
            familyi={A\bibinitperiod},
            given={Paulo},
-           giveni={P\bibinitperiod}}}%
-        {{hash=bc4a30a8ad525d29de9fac2fa9403c8d}{%
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc4a30a8ad525d29de9fac2fa9403c8d}{%
            family={Eloy},
            familyi={E\bibinitperiod},
            given={Catarina},
-           giveni={C\bibinitperiod}}}%
-        {{hash=d9128c464494b78ff113fa28b3a3a51c}{%
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9128c464494b78ff113fa28b3a3a51c}{%
            family={Polónia},
            familyi={P\bibinitperiod},
            given={António},
-           giveni={A\bibinitperiod}}}%
-        {{hash=ace173bb3c63a891d05fd810a3932d00}{%
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ace173bb3c63a891d05fd810a3932d00}{%
            family={Campilho},
            familyi={C\bibinitperiod},
            given={Aurélio},
-           giveni={A\bibinitperiod}}}%
+           giveni={A\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Public Library of Science San Francisco, CA USA}%
@@ -107,9 +81,10 @@
       \strng{authornamehash}{890122757ce7b4ec546051d9a9f84111}
       \strng{authorfullhash}{803fb96b269162092e28d2bba8bd82fd}
       \strng{authorfullhashraw}{803fb96b269162092e28d2bba8bd82fd}
-      \field{labelalpha}{Ara+17}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{PloS one}
@@ -120,33 +95,76 @@
       \field{pages}{e0177544}
       \range{pages}{-1}
     \endentry
+    \entry{ayana2021transfer}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=257d11e6b687309b78851922d7560eb2}{%
+           family={Ayana},
+           familyi={A\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d5b7df1d70cae6570cf239c89384e703}{%
+           family={Dese},
+           familyi={D\bibinitperiod},
+           given={K},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45f85e1ea7df261f687455b66ce0e61b}{%
+           family={Choe},
+           familyi={C\bibinitperiod},
+           given={SW},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{fullhash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{fullhashraw}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{bibnamehash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{authorbibnamehash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{authornamehash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{authorfullhash}{f85e4f559c383d23d26d41ac79fd4bef}
+      \strng{authorfullhashraw}{f85e4f559c383d23d26d41ac79fd4bef}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Transfer learning in breast cancer diagnoses via ultrasound imaging. Cancers 13: 738}
+      \field{year}{2021}
+    \endentry
     \entry{carriero2024deep}{article}{}{}
       \name{author}{5}{}{%
-        {{hash=de1d2973c004154e3e57f51b20c7bda2}{%
+        {{un=0,uniquepart=base,hash=de1d2973c004154e3e57f51b20c7bda2}{%
            family={Carriero},
            familyi={C\bibinitperiod},
            given={Alessandro},
-           giveni={A\bibinitperiod}}}%
-        {{hash=50a89490e38d11d6dd400989aa0fe942}{%
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=50a89490e38d11d6dd400989aa0fe942}{%
            family={Groenhoff},
            familyi={G\bibinitperiod},
            given={Léon},
-           giveni={L\bibinitperiod}}}%
-        {{hash=27f231c05875af461596019b912e1a14}{%
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=27f231c05875af461596019b912e1a14}{%
            family={Vologina},
            familyi={V\bibinitperiod},
            given={Elizaveta},
-           giveni={E\bibinitperiod}}}%
-        {{hash=42f7532dd98628e8d91c0b8945194c76}{%
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42f7532dd98628e8d91c0b8945194c76}{%
            family={Basile},
            familyi={B\bibinitperiod},
            given={Paola},
-           giveni={P\bibinitperiod}}}%
-        {{hash=a382fa601843c361e6d5a994f96af6e4}{%
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a382fa601843c361e6d5a994f96af6e4}{%
            family={Albera},
            familyi={A\bibinitperiod},
            given={Marco},
-           giveni={M\bibinitperiod}}}%
+           giveni={M\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {MDPI}%
@@ -159,9 +177,10 @@
       \strng{authornamehash}{77b53cf10984160a07ee3c980e0425c9}
       \strng{authorfullhash}{5bbfa9b7eb17010748535a1c1a2111d9}
       \strng{authorfullhashraw}{5bbfa9b7eb17010748535a1c1a2111d9}
-      \field{labelalpha}{Car+24}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Diagnostics}
@@ -174,16 +193,18 @@
     \endentry
     \entry{fatima2025application}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=893002c0da9aea23d444f0be03dd5e9f}{%
+        {{un=0,uniquepart=base,hash=893002c0da9aea23d444f0be03dd5e9f}{%
            family={Fatima},
            familyi={F\bibinitperiod},
            given={Tanjim},
-           giveni={T\bibinitperiod}}}%
-        {{hash=3f90b5d2eaeb264ca49e9f0b7cc39f9a}{%
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3f90b5d2eaeb264ca49e9f0b7cc39f9a}{%
            family={Soliman},
            familyi={S\bibinitperiod},
            given={Hamdy},
-           giveni={H\bibinitperiod}}}%
+           giveni={H\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {MDPI}%
@@ -196,9 +217,10 @@
       \strng{authornamehash}{a9909b8d43e4973ea55d6cd8bca2432f}
       \strng{authorfullhash}{a9909b8d43e4973ea55d6cd8bca2432f}
       \strng{authorfullhashraw}{a9909b8d43e4973ea55d6cd8bca2432f}
-      \field{labelalpha}{FS25}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Information}
@@ -211,21 +233,24 @@
     \endentry
     \entry{https://doi.org/10.1118/1.3013555}{article}{}{}
       \name{author}{3}{}{%
-        {{hash=5e2921e53cf0fefda1293e112d9e815e}{%
+        {{un=0,uniquepart=base,hash=5e2921e53cf0fefda1293e112d9e815e}{%
            family={Giger},
            familyi={G\bibinitperiod},
            given={Maryellen\bibnamedelima L.},
-           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=be060dbe7001419c74b1fdf05d24f04d}{%
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=be060dbe7001419c74b1fdf05d24f04d}{%
            family={Chan},
            familyi={C\bibinitperiod},
            given={Heang-Ping},
-           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
-        {{hash=97591c8e0959c57176209a192b9c1b9e}{%
+           giveni={H\bibinithyphendelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=97591c8e0959c57176209a192b9c1b9e}{%
            family={Boone},
            familyi={B\bibinitperiod},
            given={John},
-           giveni={J\bibinitperiod}}}%
+           giveni={J\bibinitperiod},
+           givenun=0}}%
       }
       \strng{namehash}{acdf0581263fa00f385732c96cd230d7}
       \strng{fullhash}{acdf0581263fa00f385732c96cd230d7}
@@ -235,9 +260,10 @@
       \strng{authornamehash}{acdf0581263fa00f385732c96cd230d7}
       \strng{authorfullhash}{acdf0581263fa00f385732c96cd230d7}
       \strng{authorfullhashraw}{acdf0581263fa00f385732c96cd230d7}
-      \field{labelalpha}{GCB08}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The roles of physicists in medical imaging have expanded over the years, from the study of imaging systems (sources and detectors) and dose to the assessment of image quality and perception, the development of image processing techniques, and the development of image analysis methods to assist in detection and diagnosis. The latter is a natural extension of medical physicists’ goals in developing imaging techniques to help physicians acquire diagnostic information and improve clinical decisions. Studies indicate that radiologists do not detect all abnormalities on images that are visible on retrospective review, and they do not always correctly characterize abnormalities that are found. Since the 1950s, the potential use of computers had been considered for analysis of radiographic abnormalities. In the mid-1980s, however, medical physicists and radiologists began major research efforts for computer-aided detection or computer-aided diagnosis(CAD), that is, using the computer output as an aid to radiologists—as opposed to a completely automatic computer interpretation—focusing initially on methods for the detection of lesions on chest radiographs and mammograms. Since then, extensive investigations of computerized image analysis for detection or diagnosis of abnormalities in a variety of 2D and 3D medical images have been conducted. The growth of CAD over the past has been tremendous—from the early days of time-consuming film digitization and CPU-intensive computations on a limited number of cases to its current status in which developed CAD approaches are evaluated rigorously on large clinically relevant databases. CAD research by medical physicists includes many aspects—collecting relevant normal and pathological cases; developing computer algorithms appropriate for the medical interpretation task including those for segmentation, feature extraction, and classifier design; developing methodology for assessing CAD performance; validating the algorithms using appropriate cases to measure performance and robustness; conducting observer studies with which to evaluate radiologists in the diagnostic task without and with the use of the computer aid; and ultimately assessing performance with a clinical trial. Medical physicists also have an important role in quantitative imaging, by validating the quantitative integrity of scanners and developing imaging techniques, and image analysis tools that extract quantitative data in a more accurate and automated fashion. As imaging systems become more complex and the need for better quantitative information from images grows, the future includes the combined research efforts from physicists working in CAD with those working on quantitative imaging systems to readily yield information on morphology, function, molecular structure, and more—from animal imaging research to clinical patient care. A historical review of CAD and a discussion of challenges for the future are presented here, along with the extension to quantitative image analysis.}
@@ -262,79 +288,50 @@
       \endverb
       \keyw{Mammography,Mammography,Image quality,Segmentation,diagnostic radiography,feature extraction,image classification,image segmentation,mammography,medical image processing,molecular biophysics,computer-aided detection,computer-aided diagnosis,quantitative image analysis,image processing,CAD,Computer aided diagnosis,Medical imaging,Radiologists,Mammography,Cancer,Computed tomography,Image detection systems,Medical physicists,Image analysis,Lungs}
     \endentry
-    \entry{kaba2024explainable}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=4c97377811580f56ff88135129f820b8}{%
-           family={Gurmessa},
-           familyi={G\bibinitperiod},
-           given={Daraje},
-           giveni={D\bibinitperiod},
-           prefix={kaba},
-           prefixi={k\bibinitperiod}}}%
-        {{hash=ab13256df0664053654b37f24f6910fa}{%
-           family={Jimma},
-           familyi={J\bibinitperiod},
-           given={Worku},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{12ea710c1ced513913288c461cc28c74}
-      \strng{fullhash}{12ea710c1ced513913288c461cc28c74}
-      \strng{fullhashraw}{12ea710c1ced513913288c461cc28c74}
-      \strng{bibnamehash}{12ea710c1ced513913288c461cc28c74}
-      \strng{authorbibnamehash}{12ea710c1ced513913288c461cc28c74}
-      \strng{authornamehash}{12ea710c1ced513913288c461cc28c74}
-      \strng{authorfullhash}{12ea710c1ced513913288c461cc28c74}
-      \strng{authorfullhashraw}{12ea710c1ced513913288c461cc28c74}
-      \field{labelalpha}{GJ24}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{BMJ Health \& Care Informatics}
-      \field{number}{1}
-      \field{title}{Explainable machine learning for breast cancer diagnosis from mammography and ultrasound images: a systematic review}
-      \field{volume}{31}
-      \field{year}{2024}
-      \field{pages}{e100954}
-      \range{pages}{-1}
-    \endentry
     \entry{guo2024machine}{article}{}{}
       \name{author}{7}{}{%
-        {{hash=884de5812490e3fa8a876e5f73e54cf6}{%
+        {{un=0,uniquepart=base,hash=884de5812490e3fa8a876e5f73e54cf6}{%
            family={Guo},
            familyi={G\bibinitperiod},
            given={Ya},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=b4b6035fbaa089ad869e2a08112c0cdf}{%
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b4b6035fbaa089ad869e2a08112c0cdf}{%
            family={Zhang},
            familyi={Z\bibinitperiod},
            given={Heng},
-           giveni={H\bibinitperiod}}}%
-        {{hash=84797d49a4d20de41e40aa311d646d72}{%
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=84797d49a4d20de41e40aa311d646d72}{%
            family={Yuan},
            familyi={Y\bibinitperiod},
            given={Leilei},
-           giveni={L\bibinitperiod}}}%
-        {{hash=b3df0c73254c736fb2a9b9f47f721807}{%
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b3df0c73254c736fb2a9b9f47f721807}{%
            family={Chen},
            familyi={C\bibinitperiod},
            given={Weidong},
-           giveni={W\bibinitperiod}}}%
-        {{hash=1eb85f9665becab6528afa42f21f08ad}{%
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1eb85f9665becab6528afa42f21f08ad}{%
            family={Zhao},
            familyi={Z\bibinitperiod},
            given={Haibo},
-           giveni={H\bibinitperiod}}}%
-        {{hash=d46509c0aac1afc991dbd5e8425d92b3}{%
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d46509c0aac1afc991dbd5e8425d92b3}{%
            family={Yu},
            familyi={Y\bibinitperiod},
            given={Qing-Qing},
-           giveni={Q\bibinithyphendelim Q\bibinitperiod}}}%
-        {{hash=6dd0c2ded902b0a6ba5e646508f89d6f}{%
+           giveni={Q\bibinithyphendelim Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6dd0c2ded902b0a6ba5e646508f89d6f}{%
            family={Shi},
            familyi={S\bibinitperiod},
            given={Wenjie},
-           giveni={W\bibinitperiod}}}%
+           giveni={W\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {SAGE Publications Sage UK: London, England}%
@@ -347,9 +344,10 @@
       \strng{authornamehash}{e52bb0500d46bab6f3449566e251a57e}
       \strng{authorfullhash}{d3c9911814a616d5679cd3a9b7914f9f}
       \strng{authorfullhashraw}{d3c9911814a616d5679cd3a9b7914f9f}
-      \field{labelalpha}{Guo+24}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of International Medical Research}
@@ -360,38 +358,84 @@
       \field{pages}{03000605241237867}
       \range{pages}{1}
     \endentry
+    \entry{kaba2024explainable}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4c97377811580f56ff88135129f820b8}{%
+           family={Gurmessa},
+           familyi={G\bibinitperiod},
+           given={Daraje},
+           giveni={D\bibinitperiod},
+           givenun=0,
+           prefix={kaba},
+           prefixi={k\bibinitperiod},
+           prefixun=0}}%
+        {{un=0,uniquepart=base,hash=ab13256df0664053654b37f24f6910fa}{%
+           family={Jimma},
+           familyi={J\bibinitperiod},
+           given={Worku},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{12ea710c1ced513913288c461cc28c74}
+      \strng{fullhash}{12ea710c1ced513913288c461cc28c74}
+      \strng{fullhashraw}{12ea710c1ced513913288c461cc28c74}
+      \strng{bibnamehash}{12ea710c1ced513913288c461cc28c74}
+      \strng{authorbibnamehash}{12ea710c1ced513913288c461cc28c74}
+      \strng{authornamehash}{12ea710c1ced513913288c461cc28c74}
+      \strng{authorfullhash}{12ea710c1ced513913288c461cc28c74}
+      \strng{authorfullhashraw}{12ea710c1ced513913288c461cc28c74}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BMJ Health \& Care Informatics}
+      \field{number}{1}
+      \field{title}{Explainable machine learning for breast cancer diagnosis from mammography and ultrasound images: a systematic review}
+      \field{volume}{31}
+      \field{year}{2024}
+      \field{pages}{e100954}
+      \range{pages}{-1}
+    \endentry
     \entry{jiang2024deep}{article}{}{}
       \name{author}{6}{}{%
-        {{hash=878ac83ca6b93e45615e3b00ec59ec68}{%
+        {{un=0,uniquepart=base,hash=878ac83ca6b93e45615e3b00ec59ec68}{%
            family={Jiang},
            familyi={J\bibinitperiod},
            given={Bitao},
-           giveni={B\bibinitperiod}}}%
-        {{hash=59fb3dc430dc5f697ecb364faea6e99a}{%
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59fb3dc430dc5f697ecb364faea6e99a}{%
            family={Bao},
            familyi={B\bibinitperiod},
            given={Lingling},
-           giveni={L\bibinitperiod}}}%
-        {{hash=c5d1c48abc4b3fd4518b1fca8d653c14}{%
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c5d1c48abc4b3fd4518b1fca8d653c14}{%
            family={He},
            familyi={H\bibinitperiod},
            given={Songqin},
-           giveni={S\bibinitperiod}}}%
-        {{hash=e7b7a2010a7d5e2313bee7c60145b7ec}{%
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7b7a2010a7d5e2313bee7c60145b7ec}{%
            family={Chen},
            familyi={C\bibinitperiod},
            given={Xiao},
-           giveni={X\bibinitperiod}}}%
-        {{hash=d150ed2384ee3fbb2d939441117106fc}{%
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d150ed2384ee3fbb2d939441117106fc}{%
            family={Jin},
            familyi={J\bibinitperiod},
            given={Zhihui},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=3c58b3b1a043b1164828b7eb608bdf58}{%
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c58b3b1a043b1164828b7eb608bdf58}{%
            family={Ye},
            familyi={Y\bibinitperiod},
            given={Yingquan},
-           giveni={Y\bibinitperiod}}}%
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -404,9 +448,10 @@
       \strng{authornamehash}{99d2dd2da9fcd03c3269fa7d617bbdc4}
       \strng{authorfullhash}{5bb47424233824275b255b44f5b62c2c}
       \strng{authorfullhashraw}{5bb47424233824275b255b44f5b62c2c}
-      \field{labelalpha}{Jia+24}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Breast Cancer Research}
@@ -419,36 +464,42 @@
     \endentry
     \entry{kumar2024segmentation}{article}{}{}
       \name{author}{6}{}{%
-        {{hash=661782d209556d2a093c7f142d25e38f}{%
+        {{un=0,uniquepart=base,hash=661782d209556d2a093c7f142d25e38f}{%
            family={Kumar\bibnamedelima Saha},
            familyi={K\bibinitperiod\bibinitdelim S\bibinitperiod},
            given={Dip},
-           giveni={D\bibinitperiod}}}%
-        {{hash=1e3f4f199f2ecacd5c1de6dd5601c66f}{%
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e3f4f199f2ecacd5c1de6dd5601c66f}{%
            family={Hossain},
            familyi={H\bibinitperiod},
            given={Tuhin},
-           giveni={T\bibinitperiod}}}%
-        {{hash=dc91573f1e42d1ff919f6a573e0d5007}{%
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc91573f1e42d1ff919f6a573e0d5007}{%
            family={Safran},
            familyi={S\bibinitperiod},
            given={Mejdl},
-           giveni={M\bibinitperiod}}}%
-        {{hash=1e020fecf1476c01d0ffae0dc08bf30b}{%
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1e020fecf1476c01d0ffae0dc08bf30b}{%
            family={Alfarhood},
            familyi={A\bibinitperiod},
            given={Sultan},
-           giveni={S\bibinitperiod}}}%
-        {{hash=43c7de3b190aee49aaac4b5c785d2790}{%
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43c7de3b190aee49aaac4b5c785d2790}{%
            family={Mridha},
            familyi={M\bibinitperiod},
            given={MF},
-           giveni={M\bibinitperiod}}}%
-        {{hash=a72c26d9ded7109024f321a4c8ea1ca3}{%
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a72c26d9ded7109024f321a4c8ea1ca3}{%
            family={Che},
            familyi={C\bibinitperiod},
            given={Dunren},
-           giveni={D\bibinitperiod}}}%
+           giveni={D\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -461,9 +512,10 @@
       \strng{authornamehash}{b3670bc02bcc81ee3cd89203c3748876}
       \strng{authorfullhash}{3dd8b3057bec4196bfdede21a767121b}
       \strng{authorfullhashraw}{3dd8b3057bec4196bfdede21a767121b}
-      \field{labelalpha}{Kum+24}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{BMC Medical Imaging}
@@ -476,36 +528,42 @@
     \endentry
     \entry{latha2024revolutionizing}{article}{}{}
       \name{author}{6}{}{%
-        {{hash=64c2d629f16f41a08875545e084248a5}{%
+        {{un=0,uniquepart=base,hash=64c2d629f16f41a08875545e084248a5}{%
            family={Latha},
            familyi={L\bibinitperiod},
            given={M},
-           giveni={M\bibinitperiod}}}%
-        {{hash=b1f602e3d85fbe9a6eb148776c9fd551}{%
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1f602e3d85fbe9a6eb148776c9fd551}{%
            family={Kumar},
            familyi={K\bibinitperiod},
            given={P\bibnamedelima Santhosh},
-           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=66f2ef07258a6165c4376f766c6a9d74}{%
+           giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66f2ef07258a6165c4376f766c6a9d74}{%
            family={Chandrika},
            familyi={C\bibinitperiod},
            given={R\bibnamedelima Roopa},
-           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=07a69a322fa009b19da47f84ba5f4cc8}{%
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=07a69a322fa009b19da47f84ba5f4cc8}{%
            family={Mahesh},
            familyi={M\bibinitperiod},
            given={TR},
-           giveni={T\bibinitperiod}}}%
-        {{hash=f2bbc467a26fd02fa0cb2584b88609da}{%
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f2bbc467a26fd02fa0cb2584b88609da}{%
            family={Kumar},
            familyi={K\bibinitperiod},
            given={V\bibnamedelima Vinoth},
-           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-        {{hash=f0dad1bb48ba22ddd39fcaae5699e2ec}{%
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0dad1bb48ba22ddd39fcaae5699e2ec}{%
            family={Guluwadi},
            familyi={G\bibinitperiod},
            given={Suresh},
-           giveni={S\bibinitperiod}}}%
+           giveni={S\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -518,9 +576,10 @@
       \strng{authornamehash}{14fd0c14237c6598ff46e232c33b2dbb}
       \strng{authorfullhash}{2b795315c985af3ea458920b90d32b1e}
       \strng{authorfullhashraw}{2b795315c985af3ea458920b90d32b1e}
-      \field{labelalpha}{Lat+24}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{BMC Medical Imaging}
@@ -533,31 +592,36 @@
     \endentry
     \entry{srikantamurthy2023classification}{article}{}{}
       \name{author}{5}{}{%
-        {{hash=0ed10bcef9dbd3d931e26ee583012e91}{%
+        {{un=0,uniquepart=base,hash=0ed10bcef9dbd3d931e26ee583012e91}{%
            family={Srikantamurthy},
            familyi={S\bibinitperiod},
            given={Mahati\bibnamedelima Munikoti},
-           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=ca16043a9e454a8dfc68ead1e01db51c}{%
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ca16043a9e454a8dfc68ead1e01db51c}{%
            family={Rallabandi},
            familyi={R\bibinitperiod},
            given={VP\bibnamedelima Subramanyam},
-           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=9fbecf4daa884501aff9ce9939c8421f}{%
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fbecf4daa884501aff9ce9939c8421f}{%
            family={Dudekula},
            familyi={D\bibinitperiod},
            given={Dawood\bibnamedelima Babu},
-           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=832712571dfcdac7e877c0ceeb411072}{%
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=832712571dfcdac7e877c0ceeb411072}{%
            family={Natarajan},
            familyi={N\bibinitperiod},
            given={Sathishkumar},
-           giveni={S\bibinitperiod}}}%
-        {{hash=7d8cec217e78028ffb3114988efec8c6}{%
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7d8cec217e78028ffb3114988efec8c6}{%
            family={Park},
            familyi={P\bibinitperiod},
            given={Junhyung},
-           giveni={J\bibinitperiod}}}%
+           giveni={J\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -570,9 +634,10 @@
       \strng{authornamehash}{979185e3fff00dcb06d406fd5a61d6fd}
       \strng{authorfullhash}{a8dc534fac5449d067dcf1def88420b5}
       \strng{authorfullhashraw}{a8dc534fac5449d067dcf1def88420b5}
-      \field{labelalpha}{Sri+23}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{BMC Medical Imaging}
@@ -585,11 +650,12 @@
     \endentry
     \entry{wang2024mammography}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=8b3da9dcfc344c55642b2c3eda5c1a6b}{%
+        {{un=0,uniquepart=base,hash=8b3da9dcfc344c55642b2c3eda5c1a6b}{%
            family={Wang},
            familyi={W\bibinitperiod},
            given={Lulu},
-           giveni={L\bibinitperiod}}}%
+           giveni={L\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {Frontiers}%
@@ -602,9 +668,10 @@
       \strng{authornamehash}{8b3da9dcfc344c55642b2c3eda5c1a6b}
       \strng{authorfullhash}{8b3da9dcfc344c55642b2c3eda5c1a6b}
       \strng{authorfullhashraw}{8b3da9dcfc344c55642b2c3eda5c1a6b}
-      \field{labelalpha}{Wan24}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Frontiers in oncology}
@@ -616,36 +683,42 @@
     \endentry
     \entry{yusoff2023accuracy}{article}{}{}
       \name{author}{6}{}{%
-        {{hash=504635bb2c76f04dbcda8a94a88213da}{%
+        {{un=0,uniquepart=base,hash=504635bb2c76f04dbcda8a94a88213da}{%
            family={Yusoff},
            familyi={Y\bibinitperiod},
            given={Marina},
-           giveni={M\bibinitperiod}}}%
-        {{hash=b8f37f819dcd9de89db53150f186356d}{%
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b8f37f819dcd9de89db53150f186356d}{%
            family={Haryanto},
            familyi={H\bibinitperiod},
            given={Toto},
-           giveni={T\bibinitperiod}}}%
-        {{hash=cca7da1b3e569115b7ccc5a7e45ba9f9}{%
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cca7da1b3e569115b7ccc5a7e45ba9f9}{%
            family={Suhartanto},
            familyi={S\bibinitperiod},
            given={Heru},
-           giveni={H\bibinitperiod}}}%
-        {{hash=0848d975af2662783977f380998f9467}{%
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0848d975af2662783977f380998f9467}{%
            family={Mustafa},
            familyi={M\bibinitperiod},
            given={Wan\bibnamedelima Azani},
-           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=8b44c9bf2068ddef8ed20a62d6c5c39f}{%
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b44c9bf2068ddef8ed20a62d6c5c39f}{%
            family={Zain},
            familyi={Z\bibinitperiod},
            given={Jasni\bibnamedelima Mohamad},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=3c8b30d36bcb56a328b1081062820a53}{%
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c8b30d36bcb56a328b1081062820a53}{%
            family={Kusmardi},
            familyi={K\bibinitperiod},
            given={Kusmardi},
-           giveni={K\bibinitperiod}}}%
+           giveni={K\bibinitperiod},
+           givenun=0}}%
       }
       \list{publisher}{1}{%
         {MDPI}%
@@ -658,9 +731,10 @@
       \strng{authornamehash}{3be6bbeff24b2d3e5785609a68f54f1e}
       \strng{authorfullhash}{4365ea1e994fe68cc8cd57d3f8efa5b3}
       \strng{authorfullhashraw}{4365ea1e994fe68cc8cd57d3f8efa5b3}
-      \field{labelalpha}{Yus+23}
       \field{sortinit}{Y}
       \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Diagnostics}

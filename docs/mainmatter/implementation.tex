@@ -8,23 +8,23 @@ methodology, and explainability. The system was implemented using TensorFlow,
 and Keras, running atop the Python interpreter. The data ingestion, and
 preprocessing steps will be covered alongside the architecture, and training of
 the convolutional neural networks used. Strategies to improve generalisation
-will be detailed, as well as the explainability module, and capturing, and
+will be detailed, as well as the explainability module, capturing, and
 visualising the results. Snippets of code are shown to demonstrate key points,
 with the full listings available in the appendix.
 
 \section{Setup}
 The necessary libraries are first imported, and the necessary helper functions
-are defined at the beginning of the notebook, to be used throughout. Namely, a
+are defined at the beginning of the notebook to be used throughout. That is, a
 garbage collection function is defined to clear as much memory as possible to
 prevent the system from crashing. This is called throughout the notebook. The
-function is called first to set the stage for the memory to be occupied solely
+function is first called to set the stage for the memory to be occupied solely
 by the subroutines in the following stages of the implementation.
 
 \section{Data Manipulation}
 This section focuses on loading, and preparing data for training, and testing
-from TFRecord files. A random seed is firstly set so that results are
-reproducibile. Due to the limitations of the hardware utilised for this
-project, a small subset of the DDSM dataset, sourced from Kaggle, was utilised.
+from TFRecord files. A random seed is first set so that results are
+reproducible. Due to the limitations of the hardware used for this
+project, a small subset of the DDSM dataset, sourced from Kaggle, was used.
 The dataset was provided in the form of TensorFlow's TFRecord format, which is
 a binary format that allows for efficient storage and retrieval of large
 datasets. Each TFRecord file contains three fields, \texttt{image},
@@ -35,9 +35,9 @@ malignant classifications), and the \texttt{label\_normal} field contains a
 normalised version of the label for direct use in training.
 
 
-Two empty lists are first initialised for images, and labels with a dictionary
+Two empty lists are first initialised for images, and labels, with a dictionary
 defined that specifies the structure of TFRecord data. A function is then
-defined to process the TFRecord files, and store the results into the
+defined to process the TFRecord files, and store the results in the
 previously defined \texttt{images}, and \texttt{labels} lists. 
 
 \begin{lstlisting}[language=Python, caption={Data ingestion from TFRecord files.}]
@@ -58,22 +58,21 @@ def read_file(files):
         labels.append(image_features["label"].numpy())
 \end{lstlisting}
 
-The garbage collection function is invoked before the files are parsed, to
-avoid any memory issues. The target TFRecord files are defined in a list, prior
-to being processed. The parsing function is finally called on the previously
+The garbage collection function is invoked before the files are parsed to
+avoid memory issues. The target TFRecord files are defined in a list before being processed. The parsing function is finally called on the previously
 defined list.
 
 \subsection{Preparing Data for Training}
 This section will discuss the cells that process the already loaded training
 data to make it more understandable to the CNN later in the notebook. Each
 image is first saved as a \texttt{.jpg} file in the \texttt{train} directory
-with enumerated filenames. The list of labels is saved as a CSV file within the
-same directory. The labels are then loaded, and converted to boolean format,
+with the enumerated filenames. The list of labels is saved as a CSV file within the
+same directory. The labels are then loaded, and converted to a Boolean format,
 ideal for the binary classification task the CNN is to perform. The list of
-\texttt{.jpg} files from the \texttt{train} directory is retrieving using
-\texttt{glob}, with the numeric part of the filename extracted, and storing in
+\texttt{.jpg} files from the \texttt{train} directory is retrieved using
+\texttt{glob}, with the numeric part of the filename extracted, and stored in
 the \texttt{mysplit} list for further sorting. A Pandas DataFrame is defined
-for training, with columns to store the image paths, and binary label, all
+for training, with columns to store the image paths, and binary labels, all
 sorted by their numeric value.
 
 \subsection{Preparing Data for Testing}
@@ -82,15 +81,15 @@ but more suited towards preparing testing data. The following cell begins by
 loading test images, and labels from NumPy files, and concatenates them to form
 \texttt{x\_test} for images, and \texttt{y\_test} for labels. The
 \texttt{y\_test} array is then converted to boolean format as was done for
-training labels. The testing data is then saved as \texttt{.jpg} files within
-the \texttt{test} directory with enumerated filenames. The test labels are then
-loaded from the CSV file, and casted as strings. Similar to the previous
+training labels. The test data are then saved as \texttt{.jpg} files within
+the \texttt{test} directory with the enumerated filenames. The test labels are then
+loaded from the CSV file, and casted as strings. Similarly to the previous
 section, the filenames are retrieved as a list of \texttt{.jpg} files using
 \texttt{glob}, with the numeric part of the filename extracted via
 \texttt{glob}. A Pandas DataFrame is finally created with this information.
 
 \subsection{Data Generators}
-The data processed in the previous sections is finally encapsulated into
+The data processed in the previous sections are finally encapsulated into
 generators to feed it into the model during training, and testing. An
 \texttt{ImageDataGenerator} object is first defined to preprocess images by
 rescaling their pixel values. Each pixel is normalised into the range 0, to
@@ -99,7 +98,7 @@ efficiency, and performance. The training generator yields batches of
 preprocessed training images, and their corresponding labels from the
 \texttt{traindf} DataFrame. This feeds the model during training. A similar
 generator is made for the testing set. As for the ViT model, the training, and
-testing data is further encapsulated into a HuggingFace dataset.
+testing data are further encapsulated into a HuggingFace dataset.
 
 \subsection{Data Augmentation}
 Further augmentation is applied to the training data for the ViT model to
@@ -130,7 +129,7 @@ prepared_test_ds = test_dataset.with_transform(transform)
 The dataset utilised appears to be imbalanced with
 an 87:13 ratio of negative to positive samples. Without intervention, this leads
 to the model's outputs being skewed in a detrimental manner, where more false
-samples are likely to be produced. In order to address this, a callback is
+samples are likely to be produced. To address this, a callback is
 utilised from the standard TensorFlow API to compute class weights, and apply
 them during training. This scales the classes according to each one's scarcity
 in an attempt to offset the class imbalance, and correct the behaviour of the
@@ -149,10 +148,10 @@ class_weights = dict(enumerate(class_weights))
 as an argument to the model's \texttt{fit} method.
 
 \section{Model Definition}
-Four models are defined, three of which are CNN-based, and another one which is
-transformer-based. Each CNN is defined with the same classification head, but
-an altered base. These models are made to handle binary classification tasks,
-which are to be trained on breast cancer tissue mammograms. The first model is
+Four models are defined, three of which are CNN-based, and another one, which is
+transformer-based. Each CNN is defined with the same classification head but
+with an altered base. These models are designed to handle binary classification tasks
+that need to be trained on breast cancer tissue mammograms. The first model is
 an entirely custom CNN, which is based upon a series of \texttt{Conv2D},
 \texttt{BatchNormalization}, and \texttt{MaxPooling2D} layers. For the
 classifier head, these are then followed by \texttt{Dense}, and
@@ -227,15 +226,15 @@ model = ViTForImageClassification.from_pretrained(
 
 
 \noindent The idea behind defining these models is to compare, and contrast
-between the different bases, and artchitectures for performance gains from the
+between the different bases, and architectures for performance gains from the
 use of transfer learning, versus using an entirely custom model.
 
 \subsection{Training the Model}
-The model will now be trained, based on the previous definition. Garbage
-collection is called prior to training, to avoid memory issues. Important
+The model will now be trained on the basis of the previous definition. Garbage
+collection is performed before training to avoid memory issues. Important
 callbacks are first defined to stop training if parameters like validation loss
-do not improve, and for the model with best validation accuracy to be saved. The
-model is compiled with an \texttt{adagrad} optimisation function, and binary
+do not improve, and for the model with the best validation accuracy to be saved. The
+model is compiled with an \texttt{adagrad} optimisation function, and a binary
 cross-entropy loss function. The model is finally trained, with data being fed
 from the previously defined generators.
 
@@ -266,23 +265,23 @@ custom_cnn_history = custom_cnn.fit(
 This section evaluates the previously trained models using standard metrics like
 accuracy, and loss on the training, and validation sets. These metrics are
 extracted into variables for later use from the performance of the model across
-different epochs during training. These are then plotted, to visualise how the
+different epochs during training. These are then plotted to visualise how the
 model's accuracy, and loss scores improved. Predictions are made on the test set
-in order to generate a final classification report, and confusion matrix. The
-previously-made predictions, and actual values are gathered, and fed into
+to generate a final classification report, and a confusion matrix. The
+previously made predictions, and actual values are gathered, and fed into
 \texttt{scikit-learn} to generate the confusion matrix. The results are then
 plotted using \texttt{seaborn}. The same values are used to generate the final
 classification report. The performances of the different models are plotted on
-the same accuracy, and loss graphs in order to demonstrate a clear distinction
+the same accuracy, and loss graphs to demonstrate a clear distinction
 of performance between the different models.
  
 \section{Model Explanation}
-This final section touches upon XAI or explainable AI, by implementing
+This final section touches on XAI or explainable AI, by implementing
 \emph{Grad-CAM} through the \texttt{tf-explain} module. This provides a visual
-indication of the parts of the image that influenced the classification made of
+indication of the parts of the image that influenced the classification made by
 the model, explaining the results achieved. This is done for the first ten
 images within the testing set, but can easily be done for any other image as
-well. A path to an image is accepted, the model is retrieved by it's final
+well. A path to an image is accepted, the model is retrieved by its final
 layer, and returns the explained version of the image, together with the
 classification result. A series of images is then passed through the
 aforementioned function, and plotted into a singular figure. Warmer colours
